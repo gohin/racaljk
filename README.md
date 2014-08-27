@@ -3,6 +3,7 @@ Hosts File for Google Service
 <h5>Windows X:</h5>
 用记事本打开C:\Windows\System32\drivers\etc中的hosts文件，把https://github.com/racaljk/hosts_for_google_service/blob/master/hosts
 中的代码复制到hosts文件中，保存即可。
+notice：如果遇到无法保存，请右键->属性->安全，然后选择你登陆的用户名，最后点击编辑，勾选"写入"即可。
 
 <h5>Linux:</h5>
 终端输入sudo gedit /etc/hosts把https://github.com/racaljk/hosts_for_google_service/blob/master/hosts

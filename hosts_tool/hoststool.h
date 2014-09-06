@@ -9,6 +9,7 @@
 #include <qfile.h>
 #include <qtextstream.h>
 #include <QMessageBox>
+#include <qglobal.h>
 
 namespace Ui {
 class HostsTool;

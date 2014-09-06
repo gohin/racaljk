@@ -11,7 +11,9 @@
 以Ubuntu为例,终端输入`sudo gedit /etc/hosts`把https://github.com/racaljk/hosts_for_google_service/blob/master/hosts 中的代码复制到hosts文件中，保存即可。
 
 #软件配置
-基于Qt C++开发.如有hosts源请发送至1948638989@qq.com.<br>
+基于Qt C++开发,一键完成hosts配置.<br>
+
+如有hosts源请发送至1948638989@qq.com.<br>
 下载:http://pan.baidu.com/s/1bnrPn1l<br>
 
 

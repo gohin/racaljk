@@ -1,20 +1,12 @@
-# **Hosts for Google Service**
+#![LOGO](http://www.easyicon.net/api/resize_png_new.php?id=1172041&size=48) **Hosts for Google Service**
 
-# 手动配置
-###Windows X:
+### Windows
+* 用记事本打开`C:\Windows\System32\drivers\etc`中的hosts文件，把[https://github.com/racaljk/hosts_for_google_service/blob/master/hosts](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts)中的代码复制到hosts文件中，保存即可。
+<br>注意：如果遇到无法保存，请右键hosts->属性->安全，然后选择你登陆的用户名，最后点击编辑，勾选"写入"即可。
 
-用记事本打开C:\Windows\System32\drivers\etc中的hosts文件，把https://github.com/racaljk/hosts_for_google_service/blob/master/hosts 中的代码复制到hosts文件中，保存即可。<br>
-**Notice：**如果遇到无法保存，请右键hosts->属性->安全，然后选择你登陆的用户名，最后点击编辑，勾选"写入"即可。
+* 如果觉得上述方法过于繁琐,可以使用Hosts自动配置工具一件完成<br>下载地址:[http://pan.baidu.com/s/1bnrPn1l](http://pan.baidu.com/s/1bnrPn1l)
 
-###Linux:
-
-以Ubuntu为例,终端输入`sudo gedit /etc/hosts`把https://github.com/racaljk/hosts_for_google_service/blob/master/hosts 中的代码复制到hosts文件中，保存即可。
-
-#软件配置
-基于Qt C++开发,一键完成hosts配置.<br>
-
-如有hosts源请发送至1948638989@qq.com.<br>
-下载:http://pan.baidu.com/s/1bnrPn1l<br>
-
+### GUN/Linux 
+* 以Ubuntu为例,终端输入`sudo gedit /etc/hosts`把[https://github.com/racaljk/hosts_for_google_service/blob/master/hosts](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts) 中的代码复制到hosts文件中，保存即可。
 
 Copyright © 2014,racallinux.cn, All Rights Reserved.

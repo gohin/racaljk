@@ -11,6 +11,6 @@
 
 ###Others
 如果这个项目没来得及更新,也可以访问下面的链接获取最新hosts文件<br>
-[老D'Blog](http://laod.cn/black-technology/hosts.html) | [盒子](http://www.360kb.com/kb/2_122.html) | [oschina](http://git.oschina.net/jiange1236/googlehosts/) | [Acrylated](https://github.com/LGA1150/Acrylated-imouto.host/blob/master/AcrylicHosts.txt) 
+[老D'Blog](http://laod.cn/black-technology/hosts.html) | [GETHOSTS](http://serve.netsh.org/pub/gethosts.php) | [oschina](http://git.oschina.net/jiange1236/googlehosts/) | [Acrylated](https://github.com/LGA1150/Acrylated-imouto.host/blob/master/AcrylicHosts.txt) 
 
 Copyright © 2014,racallinux.cn, All Rights Reserved.

@@ -1,5 +1,4 @@
 #![LOGO](https://lh5.ggpht.com/upY_AWy2O4fv_Kh4PNoj8Z8NQahNjwmM3aFFzL9jJ9IjNdDLe9TMKI8HHYvS8-K7MYEcA2piwEPiazXxjvdIPVdOtH3PZJVWEy2vxhg=s660)
-## Hosts for Google Service [Readme in English](https://github.com/racaljk/hosts/blob/master/ENGLISH.md)
 
 ## Windows
 * 用记事本打开`C:\Windows\System32\drivers\etc`中的hosts文件，把[hosts](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts)中的代码复制到hosts文件中覆盖里面的内容，保存即可。
@@ -7,7 +6,7 @@
 
 * 如果觉得上述方法过于繁琐,可以使用Hosts自动配置工具一件完成<br>**下载地址:[http://pan.baidu.com/s/1bnrPn1l](http://pan.baidu.com/s/1bnrPn1l)**
 
-## GUN/Linux 
+## GNU/Linux 
 * 以Ubuntu为例,终端输入`sudo gedit /etc/hosts`,然后把[hosts](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts) 中的代码复制到hosts文件中覆盖里面的内容，保存即可。
 
 ##Others

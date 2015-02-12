@@ -1,4 +1,4 @@
-#![LOGO](https://lh5.ggpht.com/upY_AWy2O4fv_Kh4PNoj8Z8NQahNjwmM3aFFzL9jJ9IjNdDLe9TMKI8HHYvS8-K7MYEcA2piwEPiazXxjvdIPVdOtH3PZJVWEy2vxhg=s660)
+![LOGO](https://lh5.ggpht.com/upY_AWy2O4fv_Kh4PNoj8Z8NQahNjwmM3aFFzL9jJ9IjNdDLe9TMKI8HHYvS8-K7MYEcA2piwEPiazXxjvdIPVdOtH3PZJVWEy2vxhg=s660)
 
 ## Windows
 * 用记事本打开`C:\Windows\System32\drivers\etc`中的hosts文件，把[hosts](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts)中的代码复制到hosts文件中覆盖里面的内容，保存即可。

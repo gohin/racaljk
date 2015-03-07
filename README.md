@@ -1,5 +1,6 @@
-![LOGO](https://lh4.ggpht.com/4cRmZvIphTDqFiWZFrJWGz_D4PWMQYxe6JCHtaRwYUO5yTTjbNzb0VYC7xHvmJn2tTVZPSSg9NZ9sXZYfwn0HTwKqlZKn3TqguWi-ao=s660)
+![international-womens-day-2015](https://lh3.ggpht.com/kii9xRuphhq1_Q1T-z0CU0vFZjLL2GxqmrzSnJHkiLkkQMDATWhku0SHI35h0Z2ACAbiwMeCZAoSjlS6HsAkY_ryvOfa0RPbHsUu2E4=s660)
 
+[README.md for English](https://github.com/racaljk/hosts/blob/master/README.eng.md)
 ## Windows
 * 用记事本打开`C:\Windows\System32\drivers\etc`中的hosts文件，把[hosts](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts)中的代码复制到hosts文件中覆盖里面的内容，保存即可。
 <br>注意：如果遇到无法保存，请右键hosts->属性->安全，然后选择你登陆的用户名，最后点击编辑，勾选"写入"即可。

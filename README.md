@@ -1,4 +1,4 @@
-![international-womens-day-2015](https://lh3.ggpht.com/kii9xRuphhq1_Q1T-z0CU0vFZjLL2GxqmrzSnJHkiLkkQMDATWhku0SHI35h0Z2ACAbiwMeCZAoSjlS6HsAkY_ryvOfa0RPbHsUu2E4=s660)
+![leonora-carringtons-98th-birthday](https://www.google.com.hk/logos/doodles/2015/leonora-carringtons-98th-birthday-5654572718620672-hp.jpg)
 
 [README.md for English](https://github.com/racaljk/hosts/blob/master/README.eng.md)
 ## Windows
@@ -13,7 +13,7 @@
 ## Others
 * hosts自动配置工具使用C++构建,GUI基于Qt,源码遵守GPL协议发布
 * 如果这个项目没来得及更新,也可以访问下面的链接获取最新hosts文件<br>
-[oschina](http://git.oschina.net/jiange1236/googlehosts/) | [Acrylated](https://github.com/LGA1150/Acrylated-imouto.host/blob/master/AcrylicHosts.txt) 
+[oschina](http://git.oschina.net/jiange1236/googlehosts/) | [smounives](https://hosts-smounives.rhcloud.com/hosts) 
 * 谷歌IP不一定有用,如果上述hosts还是无法登陆谷歌请使用[GoGo Tester](https://raw.githubusercontent.com/azzvx/gogotester/2.3/GoGo%20Tester/bin/Release/GoGo%20Tester.exe)寻找IP作为最后解决方案
 
 Copyright © 2015 racallinux.cn, All Rights Reserved.

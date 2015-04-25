@@ -1,4 +1,5 @@
-![leonora-carringtons-98th-birthday](https://www.google.com.hk/logos/doodles/2015/leonora-carringtons-98th-birthday-5654572718620672-hp.jpg)
+![undefine](https://lh3.googleusercontent.com/rqxNSiYHO2mjKT8mgl2VX2B8cPcCpeNImuSvwvlZ6OoiKJDqm_1QG8HmRZOHJxck6lzRfW0clD1NRNoRhiY2hEBmIz18CYfk3UWnpIdW)
+
 [README.md for Chinese](https://github.com/racaljk/hosts/blob/master/README.md)
 ## Windows
 * Use editor to open the hosts file in the path of `C:\Windows\System32\drivers\etc`.Copy the [hosts file content](https://github.com/racaljk/hosts_for_google_service/blob/master/hosts) to `C:\Windows\System32\drivers\etc`.Finally,save it.
@@ -11,8 +12,7 @@
 
 ## Others
 * Automatic hosts configuration tool was developed by c++,it based on QtGui and it licensed under the GPL license.
-* If I have no time to update this project,you can visit following links to get the newest hosts file:<br>
-[oschina](http://git.oschina.net/jiange1236/googlehosts/) | [smounives](https://hosts-smounives.rhcloud.com/hosts) 
+* If there are some unavailable ip lists  I haven't updated, you can create an Issue or a Pull Request to remind me.
 * If you can not visit google when replaced the hosts file,try to use this software [GoGo Tester](https://raw.githubusercontent.com/azzvx/gogotester/2.3/GoGo%20Tester/bin/Release/GoGo%20Tester.exe) to search an available google ip.
 
 Copyright © 2015 racallinux.cn, All Rights Reserved.

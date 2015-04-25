@@ -1,4 +1,4 @@
-![leonora-carringtons-98th-birthday](https://www.google.com.hk/logos/doodles/2015/leonora-carringtons-98th-birthday-5654572718620672-hp.jpg)
+![undefine](https://lh3.googleusercontent.com/rqxNSiYHO2mjKT8mgl2VX2B8cPcCpeNImuSvwvlZ6OoiKJDqm_1QG8HmRZOHJxck6lzRfW0clD1NRNoRhiY2hEBmIz18CYfk3UWnpIdW)
 
 [README.md for English](https://github.com/racaljk/hosts/blob/master/README.eng.md)
 ## Windows
@@ -12,8 +12,7 @@
 
 ## Others
 * hosts自动配置工具使用C++构建,GUI基于Qt,源码遵守GPL协议发布
-* 如果这个项目没来得及更新,也可以访问下面的链接获取最新hosts文件<br>
-[oschina](http://git.oschina.net/jiange1236/googlehosts/) | [smounives](https://hosts-smounives.rhcloud.com/hosts) 
+* 如果项目中某些分类IP失效但未更新,请及时通过Issue反馈或者Pull Request你的有效IP List到本项目
 * 谷歌IP不一定有用,如果上述hosts还是无法登陆谷歌请使用[GoGo Tester](https://raw.githubusercontent.com/azzvx/gogotester/2.3/GoGo%20Tester/bin/Release/GoGo%20Tester.exe)寻找IP作为最后解决方案
 
 Copyright © 2015 racallinux.cn, All Rights Reserved.

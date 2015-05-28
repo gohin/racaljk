@@ -1,4 +1,4 @@
-![undefine](https://www.google.cn/landing/cnexp/google-search.png)
+![undefine](http://www.google.cn/landing/cnexp/google-search.png)
 
 [README.md for English](https://github.com/racaljk/hosts/blob/master/README.eng.md)
 ## Windows

@@ -1400,11 +1400,10 @@
 # DuckDuckGo Start
 46.51.216.186	duckduckgo.com
 46.51.216.186	www.duckduckgo.com
-#46.51.216.186	search.duckduckgo.com
-46.51.197.89	ac.duckduckgo.com
-46.51.218.82	icons.duckduckgo.com
-46.51.218.82	images.duckduckgo.com
-46.51.216.186	help.duckduckgo.com
+46.51.216.186	ac.duckduckgo.com
+54.251.178.52	icons.duckduckgo.com
+54.251.178.52	images.duckduckgo.com
+96.45.83.209	help.duckduckgo.com
 # DuckDuckGo End
 
 # Facebook Start
@@ -1522,7 +1521,7 @@
 
 # feedly Start
 198.41.247.156	feedly.com
-64.233.184.141	feedly-beta.appspot.com
+203.133.8.242	feedly-beta.appspot.com
 162.159.255.4	s3.feedly.com
 198.41.247.156	www.feedly.com
 # feedly End
@@ -2149,7 +2148,6 @@
 203.133.8.242	chrometophone.appspot.com
 203.133.8.242	codereview.appspot.com
 203.133.8.242	evolutionofweb.appspot.com
-203.133.8.242	feedly-beta.appspot.com
 203.133.8.242	googcloudlabs.appspot.com
 203.133.8.242	googlesharedspaces.appspot.com
 203.133.8.242	gv-gadget.appspot.com
@@ -4885,6 +4883,28 @@
 203.133.8.242	38-wave-opensocial.googleusercontent.com
 203.133.8.242	39-wave-opensocial.googleusercontent.com
 203.133.8.242	40-wave-opensocial.googleusercontent.com
+203.133.8.242	gweb-letour.storage.googleapis.com
+203.133.8.242	foobar.withgoogle.com
+203.133.8.242	interstellar.withgoogle.com
+203.133.8.242	edudirectory.withgoogle.com
+203.133.8.242	atmosphere.withgoogle.com
+203.133.8.242	accelerate.withgoogle.com
+203.133.8.242	insgruene.withgoogle.com
+203.133.8.242	atmospheretokyo.withgoogle.com
+203.133.8.242	connectedclassrooms.withgoogle.com
+203.133.8.242	think.withgoogle.com
+203.133.8.242	smartypins.withgoogle.com
+203.133.8.242	streetart.withgoogle.com
+203.133.8.242	cardboard.withgoogle.com
+203.133.8.242	nikhelp.withgoogle.com
+203.133.8.242	docchinogame.withgoogle.com
+203.133.8.242	kickwithchrome.withgoogle.com
+203.133.8.242	yourtour.withgoogle.com
+203.133.8.242	candidatos.withgoogle.com
+203.133.8.242	trEndstw.withgoogle.com
+203.133.8.242	spellup.withgoogle.com
+203.133.8.242	impactchallenge.withgoogle.com
+203.133.8.242	virustotalcloud.appspot.com
 64.233.188.192	supl.google.com
 64.233.188.193	m.google.com
 64.233.188.193	m.google.com.hk
@@ -4928,27 +4948,6 @@
 64.233.188.188	mtalk.google.com
 64.233.188.188	gcm.googleapis.com
 64.233.188.188	gcm.l.google.com
-64.233.184.141	gweb-letour.storage.googleapis.com
-64.233.184.141	foobar.withgoogle.com
-64.233.184.141	interstellar.withgoogle.com
-64.233.184.141	edudirectory.withgoogle.com
-64.233.184.141	atmosphere.withgoogle.com
-64.233.184.141	accelerate.withgoogle.com
-64.233.184.141	insgruene.withgoogle.com
-64.233.184.141	atmospheretokyo.withgoogle.com
-64.233.184.141	connectedclassrooms.withgoogle.com
-64.233.184.141	think.withgoogle.com
-64.233.184.141	smartypins.withgoogle.com
-64.233.184.141	streetart.withgoogle.com
-64.233.184.141	cardboard.withgoogle.com
-64.233.184.141	nikhelp.withgoogle.com
-64.233.184.141	docchinogame.withgoogle.com
-64.233.184.141	kickwithchrome.withgoogle.com
-64.233.184.141	yourtour.withgoogle.com
-64.233.184.141	candidatos.withgoogle.com
-64.233.184.141	trEndstw.withgoogle.com
-64.233.184.141	spellup.withgoogle.com
-64.233.184.141	impactchallenge.withgoogle.com
 64.233.186.121	javascript-blocker.toggleable.com
 # Google End
 
@@ -18650,7 +18649,7 @@
 # Ixquick End
 
 # Logmein Start
-77.242.192.193 secure.logmein.com
+77.242.192.193	secure.logmein.com
 # Logmein End
 
 # MEGA Start
@@ -18665,16 +18664,24 @@
 # Mozilla Start
 117.18.232.191	activations.cdn.mozilla.net
 117.18.232.191	addons.cdn.mozilla.net
-63.245.216.132	addons.mozilla.org
 117.18.232.191	air.cdn.mozilla.net
+117.18.232.191	cdn.mozilla.net
+117.18.232.191	code.cdn.mozilla.net
 117.18.232.191	developer.cdn.mozilla.net
+117.18.232.191	download-installer.cdn.mozilla.net
 117.18.232.191	fhr.cdn.mozilla.net
-63.245.215.56	ftp.mozilla.org
+117.18.232.191	glow.cdn.mozilla.net
 117.18.232.191	marketplace.cdn.mozilla.net
 117.18.232.191	mozorg.cdn.mozilla.net
+117.18.232.191	snippets.cdn.mozilla.net
 117.18.232.191	support.cdn.mozilla.net
-117.18.232.191  download-installer.cdn.mozilla.net	
-117.18.237.191  getpersonas-cdn.mozilla.net	
+117.18.232.191	telemetry-experiment.cdn.mozilla.net
+117.18.232.191	videos.cdn.mozilla.net
+117.18.237.191	getpersonas-cdn.mozilla.net
+117.18.237.29	ocsp.digicert.com	
+63.245.215.56	ftp.mozilla.org
+63.245.216.132	addons.mozilla.org
+72.21.81.109	df6a.https.cdn.softlayer.net
 # Mozilla End
 
 # OneDrive Start
@@ -18930,7 +18937,7 @@
 54.231.34.105	uplay-avatars.s3.amazonaws.com
 23.32.241.24	uplaypc-s-ubisoft.cdn.ubi.com
 216.98.48.11	wspuplay-ext.ubi.com
-111.221.35.165  static3.cdn.ubi.com	
+111.221.35.165	static3.cdn.ubi.com	
 # Uplay End
 
 # Wikipedia Start

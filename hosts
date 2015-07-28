@@ -18806,27 +18806,6 @@ fe80::1%lo0      localhost
 23.22.105.178	hosts-smounives.rhcloud.com
 # OpenShift End
 
-# Origin Start
-159.153.228.78	account.origin.com
-159.153.228.75	accounts.ea.com
-54.164.188.240	atom.dm.origin.com
-23.23.226.27	c90ae826.gs.ea.com
-54.208.223.208	dirtybits.dm.origin.com
-23.37.155.9	download.dm.origin.com
-220.90.198.67	eaassets01-a.akamaihd.net
-220.90.198.72	eaassets02-a.akamaihd.net
-220.90.198.74	eaassets03-a.akamaihd.net
-220.90.198.83	eaassets04-a.akamaihd.net
-72.246.188.43	eaassets-a.akamaihd.net
-159.153.228.76	gateway.ea.com
-159.153.235.32	gostelemetry.blaze3.ea.com
-54.235.220.237	heartbeat.dm.origin.com
-54.225.208.38	help.ea.com
-23.37.155.9	secure.download.dm.origin.com
-159.153.228.77	signin.ea.com
-104.68.125.71	www.origin.com
-# Origin End
-
 # osu Start
 141.101.112.193	a.ppy.sh
 141.101.112.193	b.ppy.sh

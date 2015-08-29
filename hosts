@@ -1589,7 +1589,8 @@ fe80::1%lo0     localhost
 103.7.200.79	imap.gmail.com 
 103.7.200.79	m.gmail.com 
 103.7.200.79	m.googlemail.com 
-103.7.200.79	mail.google.com 
+103.7.200.79	mail.google.com
+103.7.200.79	inbox.google.com
 103.7.200.79	pop.gmail.com 
 103.7.200.79	smtp.gmail.com 
 103.7.200.79	smtp.googlemail.com 

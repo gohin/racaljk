@@ -13,6 +13,7 @@
 * `script_tool_for_linux.bash` linux环境的hosts自动配置脚本,由@lstoars贡献
 
 ## Others
+* 如果Facebook， Twitter, Youtube等无法成功打开，请使用https方式访问，Youtube看视频的可能性不大，建议使用Firefox浏览器插件下载Youtube视频
 * 如果项目中某些分类IP失效但未更新,请及时通过Issue反馈或者Pull Request你的有效IP List到本项目
 * 谷歌IP不一定有用,如果上述hosts还是无法登陆谷歌请使用[GoGo Tester](https://raw.githubusercontent.com/azzvx/gogotester/2.3/GoGo%20Tester/bin/Release/GoGo%20Tester.exe)寻找IP作为最后解决方案
 

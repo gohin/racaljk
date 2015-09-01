@@ -2280,8 +2280,8 @@ fe80::1%lo0	localhost
 103.7.200.79	www3-china.l.google.com 
 103.7.200.79	www4-china.l.google.com 
 103.7.200.79	www-china.l.google.com 
-  
-# UpLoad 
+
+# UpLoad
 103.7.200.79	upload.client.google.com 
 103.7.200.79	upload.clients.google.com 
 103.7.200.79	upload.docs.google.com 
@@ -2292,27 +2292,47 @@ fe80::1%lo0	localhost
 103.7.200.79	uploads.clients.google.com 
 103.7.200.79	uploads.code.google.com 
   
-# Google Play 
-103.7.200.79	r1---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r2---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r3---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r4---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r5---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r6---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r7---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r8---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r9---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r10---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r11---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r12---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r13---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r14---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r15---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r16---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r17---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r18---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r19---sn-a5m7znee.c.android.clients.google.com 
-103.7.200.79	r20---sn-a5m7znee.c.android.clients.google.com 
+# Google Play
+103.7.200.79	r1---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r2---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r3---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r4---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r5---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r6---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r7---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r8---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r9---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r10---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r11---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r12---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r13---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r14---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r15---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r16---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r17---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r18---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r19---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r20---sn-a5m7znee.c.android.clients.google.com
+103.7.200.79	r1---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r2---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r3---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r4---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r5---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r6---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r7---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r8---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r9---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r10---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r11---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r12---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r13---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r14---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r15---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r16---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r17---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r18---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r19---sn-a5m7zu7s.c.android.clients.google.com
+103.7.200.79	r20---sn-a5m7zu7s.c.android.clients.google.com
 103.7.200.79	r1---sn-a5m7zne7.c.android.clients.google.com 
 103.7.200.79	r2---sn-a5m7zne7.c.android.clients.google.com 
 103.7.200.79	r3---sn-a5m7zne7.c.android.clients.google.com 
@@ -2918,6 +2938,7 @@ fe80::1%lo0	localhost
 103.7.200.79	www2.blogger.co 
   
 # Youtube 
+103.7.200.79	myaccount.google.com
 103.7.200.79	accounts.youtube.com 
 103.7.200.79	apiblog.youtube.com 
 103.7.200.79	clients1.youtube.com 
@@ -3425,7 +3446,9 @@ fe80::1%lo0	localhost
 103.7.200.79	toolbarqueries.google.com.tw 
 103.7.200.79	toolbarqueries.l.google.com 
 103.7.200.79	tools.google.com 
-103.7.200.79	tools.l.google.com 
+103.7.200.79	tools.l.google.com
+103.7.200.79	toolbox.googleapps.com
+103.7.200.79	eduproducts.withgoogle.com
 103.7.200.79	translate.google.cn 
 103.7.200.79	translate.google.co.jp 
 103.7.200.79	translate.google.com 
@@ -3520,6 +3543,8 @@ fe80::1%lo0	localhost
 103.7.200.79	www-google-analytics.l.google.com 
 103.7.200.79	youtu.be 
 103.7.200.79	ytstatic.l.google.com
+103.7.200.79	manifest.googlevideo.com
+103.7.200.79	redirector.googlevideo.com
 
 # Google end
 
@@ -3756,7 +3781,7 @@ fe80::1%lo0	localhost
 205.185.216.10	content3.steampowered.com
 69.252.117.26	content6.steampowered.com
 23.32.241.19	content8.steampowered.com
-23.2.2.112	forums.steampowered.com
+184.50.91.157	forums.steampowered.com
 23.32.241.19	images.akamai.steamusercontent.com
 23.32.241.19	media.steampowered.com
 205.185.216.42	media2.steampowered.com
@@ -3764,14 +3789,14 @@ fe80::1%lo0	localhost
 23.32.241.19	media4.steampowered.com
 46.16.252.18	na.gcsip.com
 23.32.248.58	steamcdn-a.akamaihd.net
-23.2.2.112	steamcommunity.com
+184.50.91.157	steamcommunity.com
 23.32.248.10	steamcommunity-a.akamaihd.net
 23.32.248.48	steamstore-a.akamaihd.net
 23.32.241.19	store.akamai.steamstatic.com
-23.2.2.112	store.steampowered.com
+184.50.91.157	store.steampowered.com
 23.32.241.40	store.valvesoftware.com
-23.2.2.112	storefront.steampowered.com
-23.2.2.112	support.steampowered.com
+184.50.91.157	storefront.steampowered.com
+184.50.91.157	support.steampowered.com
 # Steam End
 
 # Twitter Start

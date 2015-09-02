@@ -1583,6 +1583,7 @@ fe80::1%lo0	localhost
 103.7.200.79	talk.gmail.com 
 103.7.200.79	www.emailintervention.com 
 103.7.200.79	www.gmail.com 
+103.7.200.79	inbox.google.com 
 # Gmail End
 
 # Google Zip 
@@ -3861,7 +3862,7 @@ fe80::1%lo0	localhost
 199.16.158.182	tweetdeck.com
 199.16.158.182	tweetdeck.twitter.com
 173.236.110.98	twitpic.com
-199.16.158.179	twitter.com
+185.45.5.32	twitter.com
 199.16.158.187	upload.twitter.com
 95.211.220.155	urls-real.api.twitter.com
 108.61.13.60	userstream.twitter.com
@@ -3877,7 +3878,7 @@ fe80::1%lo0	localhost
 173.236.110.98	web8.twitpic.com
 173.236.110.98	web9.twitpic.com
 199.16.158.182	www.tweetdeck.com
-199.16.158.179	www.twitter.com
+185.45.5.32	www.twitter.com
 23.44.161.224	p.twitter.com
 204.13.251.34	search.twitter.com
 72.21.80.5	status.twitter.com

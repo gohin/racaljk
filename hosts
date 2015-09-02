@@ -1590,7 +1590,8 @@ fe80::1%lo0	localhost
 74.125.201.211	proxy.googlezip.net 
 74.125.201.212	check.googlezip.net 
   
-# Google Accounts	 
+# Google Accounts
+103.7.200.79	contacts.google.com
 103.7.200.79	accounts.blogger.com 
 103.7.200.79	accounts.google.co.jp 
 103.7.200.79	accounts.google.com 

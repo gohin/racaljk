@@ -9,6 +9,7 @@ Commemoration of 70th Anniversary of Victory of Chinese People's Resistance agai
 
 ### GNU/Linux 
 * 以Ubuntu为例,终端输入`gksudo gedit /etc/hosts`,然后把[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 中的代码复制到hosts文件中并添加到已有内容的下面，保存并重启系统即可。
+<br>
 <br>也可使用wget或curl命令，以wget为例：`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O - >> /etc/hosts`
 <br>复制上述命令并在终端运行，然后重启系统即可
 

@@ -4,11 +4,14 @@
 Commemoration of 70th Anniversary of Victory of Chinese People's Resistance against **Japanese Aggression** and World Anti-Fascist War
 
 ### Windows
-* 用记事本打开`C:\Windows\System32\drivers\etc`中的hosts文件，把[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)中的代码复制到hosts文件中覆盖里面的内容，保存即可。
+* 用记事本打开`C:\Windows\System32\drivers\etc`中的hosts文件，把[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)中的代码复制到hosts文件中并添加到已有内容的下面，保存并重启系统即可。
 <br>注意：如果遇到无法保存，请右键hosts->属性->安全，然后选择你登陆的用户名，最后点击编辑，勾选"写入"即可。
 
 ### GNU/Linux 
-* 以Ubuntu为例,终端输入`gksudo gedit /etc/hosts`,然后把[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 中的代码复制到hosts文件中覆盖里面的内容，保存即可。
+* 以Ubuntu为例,终端输入`gksudo gedit /etc/hosts`,然后把[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 中的代码复制到hosts文件中并添加到已有内容的下面，保存并重启系统即可。
+<br>
+<br>也可使用wget或curl命令，以wget为例：`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O - >> /etc/hosts`
+<br>复制上述命令并在终端运行，然后重启系统即可
 
 ### Others
 * 更多细节请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)

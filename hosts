@@ -1600,6 +1600,9 @@ fe80::1%lo0	localhost
 103.7.200.79	accounts.google.com.sg 
 103.7.200.79	accounts.google.com.tw 
 103.7.200.79	accounts.l.google.com 
+
+# Google Security
+103.7.200.79	security.google.com 
   
 # Google.com
 103.7.200.79	www.google.com.gr 

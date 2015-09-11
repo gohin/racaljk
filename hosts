@@ -5655,4 +5655,9 @@ fe80::1%lo0	localhost
 77.238.184.150	ying.com
 # Yahoo End
 
+# Appannie start
+69.167.138.64	www.appannie.com
+69.167.138.64	appannie.com
+# Appannie end
+
 # Modify hosts end

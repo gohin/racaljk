@@ -1506,8 +1506,8 @@ fe80::1%lo0	localhost
 31.13.95.46	zh-tw.facebook.com
 31.13.95.46	b-api.facebook.com
 31.13.95.46	b-graph.facebook.com
-104.78.23.174	connect.facebook.net
-23.32.248.41	creative.ak.fbcdn.net
+31.13.95.46	connect.facebook.net
+31.13.95.46	creative.ak.fbcdn.net
 31.13.95.46	d.facebook.com
 31.13.95.46	ent-a.xx.fbcdn.net
 31.13.95.46	ent-b.xx.fbcdn.net
@@ -4840,9 +4840,17 @@ fe80::1%lo0	localhost
 # inoreader End
 
 # Instagram Start
-107.23.173.176	instagram.com
-107.23.173.180	imagemanager.idexx.com
-184.25.56.249	instagramstatic-a.akamaihd.net
+31.13.95.48	www.instagram.com
+31.13.95.48	instagram.com
+184.25.56.249	igcdn-photos-a-a.akamaihd.net
+184.25.56.249	igcdn-photos-b-a.akamaihd.net
+184.25.56.249	igcdn-photos-c-a.akamaihd.net
+184.25.56.249	igcdn-photos-d-a.akamaihd.net
+184.25.56.249	igcdn-photos-e-a.akamaihd.net
+184.25.56.249	igcdn-photos-f-a.akamaihd.net
+184.25.56.249	igcdn-photos-g-a.akamaihd.net
+184.25.56.249	igcdn-photos-h-a.akamaihd.net
+31.13.95.48	scontent.cdninstagram.com
 # Instagram End
 
 # Ixquick Start

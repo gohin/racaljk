@@ -1,7 +1,6 @@
-![](http://gb.cri.cn/mmsource/images/2015/04/07/nk20150401016.jpg)
-**纪念中国人民抗日战争暨世界反法西斯战争胜利70周年！**
+![](https://lh3.googleusercontent.com/hgeIZb81OJmQhkUZd5BrFaGrUPSEPLnefczpePlKM-hhZnlssko7xCErCcazP6oIWqJ_FLulZ4sE_HdPppxnu9jr20BiEK95joDMpu9SEg=s660)
 
-Commemoration of 70th Anniversary of Victory of Chinese People's Resistance against **Japanese Aggression** and World Anti-Fascist War
+**更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 
 ### Windows
 * 用文本编辑器(如Notepad++|记事本)打开`C:\Windows\System32\drivers\etc`中的hosts文件，  
@@ -32,9 +31,13 @@ Commemoration of 70th Anniversary of Victory of Chinese People's Resistance agai
 拔网线(断网) -> 插网线(重新连接网络)  
   
 ### Others
-* 更多细节请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)
-* 如果Facebook， Twitter, Google等无法成功打开，请确认是否为https方式访问，用hosts看Youtube视频基本无法实现，需要看Youtube的朋友请寻找其他途径。
-* 如果项目中某些分类IP失效但未更新,请及时通过Issue反馈或者Pull Request你的有效IP List到本项目
-* 如果上述hosts还是无法登陆谷歌请使用[GoGo Tester](https://raw.githubusercontent.com/azzvx/gogotester/2.3/GoGo%20Tester/bin/Release/GoGo%20Tester.exe)寻找IP作为最后解决方案
-
-Copyright © 2015 racaljk, All Rights Reserved.
+* 可使用[getHosts.py](https://github.com/racaljk/hosts/blob/master/getHosts.py)进行跨平台的hosts简单配置,简单示例如下
+```python
+import getHosts
+h =getHosts.hosts()
+h.printContributors() #输出hosts贡献者名单
+h.getReadMeFile()     #获取README.MD文件
+h.getHostsFile()      #获取hosts文件
+                      #更多功能亟待补充
+```
+* 衷心感谢每位参与开源hosts的用户[https://github.com/racaljk/hosts/graphs/contributors](https://github.com/racaljk/hosts/graphs/contributors)

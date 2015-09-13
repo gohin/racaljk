@@ -9,33 +9,18 @@ Commemoration of 70th Anniversary of Victory of Chinese People's Resistance agai
 <br>**注意：如果遇到无法保存，请右键hosts->属性->安全，然后选择你登陆的用户名，最后点击编辑，勾选"写入"即可。**
 
 ### GNU/Linux
-* Linux 系统通用（推荐）：  
-使用wget或curl命令，以wget为例：  
-终端输入`sudo rename /etc/hosts /etc/hosts.bak`
-之后输入
-`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O /etc/hosts`
+* Linux 系统终端下命令：  
+使用wget或curl，以wget为例：  
+开启终端(快捷键为"Ctrl + Alt + T")输入`sudo rename /etc/hosts /etc/hosts.bak /etc/hosts`之后输入
+<br>`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O /etc/hosts`
 按下述方法令其生效  
-
-* Ubuntu：  
-打开终端(快捷键Ctrl + Alt + T), 在终端输入  
-`sudo rename /etc/hosts /etc/hosts.bak`备份原hosts文件之后输入
-`gksudo gedit /etc/hosts`
-把 -> [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) <- 复制到文本编辑器中，保存后按下述方法令其生效。
-
-* Gnome 桌面系统：  
-终端输入`sudo rename /etc/hosts /etc/hosts.bak`之后输入  
-`gnomesu gedit /etc/hosts`把 -> [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) <- 复制到文本编辑器中，保存后按下述方法令其生效。
-
-* KDE 桌面系统：  
-终端输入`sudo rename /etc/hosts /etc/hosts.bak`之后输入  
-`kdesu kwrite /etc/hosts`把 -> [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) <- 复制到文本编辑器中，保存后按下述方法令其生效。
 
 ### 修改hosts后生效的方法
 * Windows  
 开始 -> 运行 -> 输入cmd -> 在CMD窗口输入`ipconfig /flushdns`
   
 * Linux  
-开启终端(快捷键为Ctrl + Alt + T)，输入`sudo rcnscd restart`
+终端输入`sudo rcnscd restart`
   
 * Mac OS X  
 终端输入`sudo killall -HUP mDNSResponder`

@@ -1,4 +1,4 @@
-![](https://lh3.googleusercontent.com/hgeIZb81OJmQhkUZd5BrFaGrUPSEPLnefczpePlKM-hhZnlssko7xCErCcazP6oIWqJ_FLulZ4sE_HdPppxnu9jr20BiEK95joDMpu9SEg=s660)
+![](https://lh3.googleusercontent.com/50BqZK1dz9Dx6kHTv4jXr8bKu1UOVmu56Z9QWf5Zvwh6XjPDS1YwsDfYV5-ozwPjIO9EPgnFr6ztJrMLWlB3AHhfAcdsWHWQfzlP-ik-)
 
 **更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 
@@ -12,7 +12,7 @@
 使用wget或curl，以wget为例：  
 开启终端(快捷键为"Ctrl + Alt + T")输入`sudo mv /etc/hosts /etc/hosts.bak`之后输入
 <br>`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O /etc/hosts`
-按下述方法令其生效  
+<br>按下述方法令其生效
 
 ### 修改hosts后生效的方法
 * Windows  
@@ -20,7 +20,7 @@
   
 * Linux  
 终端输入`sudo rcnscd restart`
-<br>(对于systemed发行版，请使用命令`sudo systemctl restart NetworkManager`。如果不懂请都尝试下)
+<br>(对于systemd发行版，请使用命令`sudo systemctl restart NetworkManager`。如果不懂请都尝试下)
   
 * Mac OS X  
 终端输入`sudo killall -HUP mDNSResponder`

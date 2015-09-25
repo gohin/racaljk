@@ -4236,7 +4236,7 @@ fe80::1%lo0	localhost
 
 # Huhamhire Start
 192.184.89.121	hosts.huhamhire.com
-103.7.200.79	huhamhire-hosts.googlecode.com 
+103.7.200.79	huhamhire-hosts.googlecode.com
 199.27.79.133	huhamhire.github.com
 # Huhamhire End
 
@@ -4356,7 +4356,7 @@ fe80::1%lo0	localhost
 117.18.232.191	telemetry-experiment.cdn.mozilla.net
 117.18.232.191	videos.cdn.mozilla.net
 117.18.237.191	getpersonas-cdn.mozilla.net
-117.18.237.29	ocsp.digicert.com	
+117.18.237.29	ocsp.digicert.com
 63.245.215.56	ftp.mozilla.org
 63.245.216.132	addons.mozilla.org
 72.21.81.109	df6a.https.cdn.softlayer.net
@@ -5097,5 +5097,9 @@ fe80::1%lo0	localhost
 69.167.138.64	www.appannie.com
 69.167.138.64	appannie.com
 # Appannie end
+
+# Travis CI fastly CDN Start
+185.31.17.184	travis-ci-org.global.ssl.fastly.net
+# Travis CI fastly CDN End
 
 # Modify hosts end

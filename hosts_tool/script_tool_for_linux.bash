@@ -7,6 +7,7 @@ if [ `whoami` = 'root' ]; then
     cat $script_path/custom > /etc/hosts
     echo >> /etc/hosts
     cat $script_path/fetchedhosts >> /etc/hosts
+    echo Success.
 else
     echo Sudo to run this script.
 fi

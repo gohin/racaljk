@@ -1,4 +1,5 @@
-![](https://lh3.googleusercontent.com/50BqZK1dz9Dx6kHTv4jXr8bKu1UOVmu56Z9QWf5Zvwh6XjPDS1YwsDfYV5-ozwPjIO9EPgnFr6ztJrMLWlB3AHhfAcdsWHWQfzlP-ik-)
+![](https://www.google.com.hk/logos/doodles/2015/evidence-of-water-found-on-mars-5652760466817024.2-hp.gif)
+**已证实火星上存在液态水啦！！**
 
 **更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 

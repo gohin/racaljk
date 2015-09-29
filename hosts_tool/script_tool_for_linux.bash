@@ -1,12 +1,13 @@
-#!/bin/bash
-
-dir="$( cd "$( dirname "$0" )" && pwd )"
-cd $dir
-rm hosts.bak
-rm hosts
-wget "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
-cp /etc/hosts ./hosts.bak
-echo -e \n >> hosts
-echo "127.0.0.1 "hostname >> hosts
-cp ./hosts /etc/hosts
-echo "Success"
+#!/usr/bin/env bash
+# Pls check if 'custom' file is with this script before run.
+if [ `whoami` = 'root' ]; then
+    script_path=`dirname $0`
+    cp /etc/hosts $script_path/hosts-`date +%F-%H%M%S`.bak
+    wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O $script_path/fetchedhosts
+    cat $script_path/custom > /etc/hosts
+    echo >> /etc/hosts
+    cat $script_path/fetchedhosts >> /etc/hosts
+    echo Success.
+else
+    echo Sudo to run this script.
+fi

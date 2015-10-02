@@ -7,7 +7,7 @@ class hosts(object):
     def __init__(self):
         self.reposUrl = 'https://github.com/racaljk/hosts'
 
-    def getRaw(url):
+    def getRaw(self, url):
         header ={
                 'User-Agent':'Mozilla/5.0 (Windows NT 6.2; rv:16.0) Gecko/20100101 Firefox/16.0'
         }

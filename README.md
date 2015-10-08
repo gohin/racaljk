@@ -11,8 +11,7 @@
 ### GNU/Linux
 * Linux 系统终端下命令：  
 使用wget或curl，以wget为例：  
-开启终端(快捷键为"Ctrl + Alt + T")输入`sudo mv /etc/hosts /etc/hosts.bak`之后输入
-<br>`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O /etc/hosts`
+开启终端(快捷键为"Ctrl + Alt + T")输入`sudo wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts_tool/script_tool_for_linux.sh -O - | bash -`
 <br>按下述方法令其生效
 
 ### 修改hosts后生效的方法

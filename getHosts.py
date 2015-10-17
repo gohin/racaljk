@@ -33,7 +33,7 @@ class hosts(object):
             f.write(content)
 
     def printContributors(self):
-        l = ['racaljk', 'andytimes', 'smounives', 'smounives',
+        l = ['racaljk', 'andytimes', 'smounives',
              'TimothyGu', 'RellyVadd', 'LyricTian']
 
         c = [{'author': i,

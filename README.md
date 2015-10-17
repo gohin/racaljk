@@ -31,14 +31,17 @@
 * 通用方法  
 拔网线(断网) -> 插网线(重新连接网络)  
   
-### Others
-* 可使用[getHosts.py](https://github.com/racaljk/hosts/blob/master/getHosts.py)进行跨平台的hosts简单配置,简单示例如下
+### 其它
+* 可使用[getHosts.py](https://github.com/racaljk/hosts/blob/master/getHosts.py)进行跨平台hosts相关操作,简单示例如下
 ```python
 import getHosts
 h = getHosts.hosts()
 h.printContributors() #输出hosts贡献者名单
 h.getReadMeFile()     #获取README.MD文件
 h.getHostsFile()      #获取hosts文件
+h.reportIssue(usrname='github username',password='github password',\
+			title='issue title',body='issue content')
+              		  #快捷创建Issue
                       #更多功能亟待补充
 ```
 * 衷心感谢每位参与开源hosts的用户[https://github.com/racaljk/hosts/graphs/contributors](https://github.com/racaljk/hosts/graphs/contributors)

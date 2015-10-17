@@ -2,7 +2,7 @@
 # more functions will be added in next version
 
 import urllib2
-
+import github
 
 class hosts(object):
 
@@ -34,12 +34,22 @@ class hosts(object):
 
     def printContributors(self):
         l = ['racaljk', 'andytimes', 'smounives',
-             'TimothyGu', 'RellyVadd', 'LyricTian']
+             'K-Guan','cw881014','fluviusmagnus',
+             'whiteclover','LyricTian','RellyVadd',
+             'mklnz','chaosshen','TimothyGu']
 
         c = [{'author': i,
               'githubpage': 'https://github.com/' + i} for i in l]
 
-        print ':D thanks for all contributors:'
+        print ':D thanks for all contributors(sort by commits):'
         for x in c:
             for (k, v) in x.items():
                 print k + ':' + v
+
+    #you need to provide your github.username&github.password in following next functions
+    def reportIssue(self,username,password,title,body):
+        if username=='' or password=='' or title==''or body=='':
+            raise ValueError('incorrect parameters,try again.')
+        gh = github.GitHub(username,password)
+        gh.repos('racaljk')('pyann').issues.post(title=title, body=body,label='QuickIssue')
+        print 'You have succeed to report a Issue to hosts project via getHost script.'

@@ -1,5 +1,5 @@
 ![](https://www.google.com.hk/logos/doodles/2015/evidence-of-water-found-on-mars-5652760466817024.2-hp.gif)
-**已证实火星上存在液态水啦！！**
+<br>**已证实火星上存在液态水啦！！**
 
 **更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 
@@ -11,8 +11,7 @@
 ### GNU/Linux
 * Linux 系统终端下命令：  
 使用wget或curl，以wget为例：  
-开启终端(快捷键为"Ctrl + Alt + T")输入`sudo mv /etc/hosts /etc/hosts.bak`之后输入
-<br>`sudo wget -q https://raw.githubusercontent.com/racaljk/hosts/master/hosts -O /etc/hosts`
+开启终端(快捷键为"Ctrl + Alt + T")输入`wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts_tool/script_tool_for_linux.sh -O - | sudo bash -`
 <br>按下述方法令其生效
 
 ### 修改hosts后生效的方法

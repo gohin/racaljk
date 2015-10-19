@@ -253,11 +253,11 @@ fe80::1%lo0	localhost
 # Google Start
 8.8.8.8	google-public-dns-a.google.com
 8.8.4.4	google-public-dns-b.google.com
+64.233.160.90	www.google.com
+216.239.38.123	google.com
 216.239.38.123	gcr.io
 216.239.38.123	www.gcr.io
 216.239.38.123	com.google
-216.239.38.123	google.com
-216.239.38.123	www.google.com
 216.239.38.123	admin.google.com
 216.239.38.123	accounts.google.com
 216.239.38.123	bpui0.google.com

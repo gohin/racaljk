@@ -1,5 +1,4 @@
 ![](https://www.google.com.hk/logos/doodles/2015/evidence-of-water-found-on-mars-5652760466817024.2-hp.gif)
-<br>**已证实火星上存在液态水啦！！**
 
 **更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 
@@ -19,8 +18,8 @@
 开始 -> 运行 -> 输入cmd -> 在CMD窗口输入`ipconfig /flushdns`
   
 * Linux  
-终端输入`sudo rcnscd restart`
-<br>(对于systemd发行版，请使用命令`sudo systemctl restart NetworkManager`。如果不懂请都尝试下)
+终端输入`sudo systemctl restart NetworkManager`
+<br>非systemd发行版，终端输入`sudo rcnscd restart`
   
 * Mac OS X  
 终端输入`sudo killall -HUP mDNSResponder`
@@ -45,3 +44,5 @@ h.reportIssue(usrname='github username',password='github password',\
                       #更多功能亟待补充
 ```
 * 衷心感谢每位参与开源hosts的用户[https://github.com/racaljk/hosts/graphs/contributors](https://github.com/racaljk/hosts/graphs/contributors)
+
+Copyright © 2014-2015 racaljk, All Rights Reserved.

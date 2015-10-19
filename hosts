@@ -1,8 +1,15 @@
 ##
+# Copyright (c) 2014-2015, racaljk.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY. Redistribution and use in anyway, DO
+# NOT remove these and follow comments.
+#
 # Host Database
 #
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
+#
 ##
 127.0.0.1	localhost
 255.255.255.255	broadcasthost

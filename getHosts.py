@@ -51,5 +51,5 @@ class hosts(object):
         if username=='' or password=='' or title==''or body=='':
             raise ValueError('incorrect parameters,try again.')
         gh = github.GitHub(username,password)
-        gh.repos('racaljk')('pyann').issues.post(title=title, body=body,label='QuickIssue')
+        gh.repos('racaljk')('hosts').issues.post(title=title, body=body,label='QuickIssue')
         print 'You have succeed to report a Issue to hosts project via getHost script.'

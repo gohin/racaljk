@@ -1,4 +1,4 @@
-![](https://www.google.com.hk/logos/doodles/2015/evidence-of-water-found-on-mars-5652760466817024.2-hp.gif)
+![](https://lh3.googleusercontent.com/OlK0I-7oGT7TTP2dRhU_cyGgaPsFv9LPLA26-saxcjuUlB2H4xzSpaRj5CROZkg84jeeUeP8zBp3sJ2aZM_4MLfWT1-wri6P8ILsGgU5TQ=s660)
 
 **更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 

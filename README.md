@@ -34,4 +34,8 @@ Linux 系统终端下命令：
 * 可使用`scripts/`中的脚本进行配置
 * 衷心感谢每位参与开源hosts的用户[https://github.com/racaljk/hosts/graphs/contributors](https://github.com/racaljk/hosts/graphs/contributors)
 
+## License
+* Code of this project is licensed under the MIT license.
+* Content of this project (including hosts and Readme) is licensed under [CC4.0 BY-NC-SA ](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+
 Copyright © 2014-2015 racaljk, All Rights Reserved.

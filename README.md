@@ -36,6 +36,4 @@ Linux 系统终端下命令：
 
 ## License
 * Code of this project is licensed under the MIT license.
-* Content of this project (including hosts and Readme) is licensed under [CC4.0 BY-NC-SA ](https://creativecommons.org/licenses/by-nc-sa/3.0/)
-
-Copyright © 2014-2015 racaljk, All Rights Reserved.
+* Content of this project (including hosts and Readme) is licensed under [CC4.0 BY-NC-SA ](https://creativecommons.org/licenses/by-nc-sa/4.0/)

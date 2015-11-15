@@ -27,6 +27,7 @@ Linux 系统终端下命令：
 ## 注意事项！
 * Linux、Mac、Android用户请用Notepad++ 转换文本编码和换行符格式，否则hosts可能会无法正常工作。对此你可以参考这个[解决方案](http://www.zhihu.com/question/29064201/answer/63612656)。
 * Android和iOS需要root权限和越狱后才能访问hosts文件。
+* 由于部分App不支持[SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)，故不推荐在移动设备上使用
  
 ##  其它
 * 转载和使用过程中请保留hosts文件注释以及任何能体现版权的信息。
@@ -36,4 +37,4 @@ Linux 系统终端下命令：
 
 ## License
 * Code of this project is licensed under the MIT license.
-* Content of this project (including hosts and Readme) is licensed under [CC4.0 BY-NC-SA ](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+* Content of this project (including hosts , wiki and Readme) is licensed under [CC4.0 BY-NC-SA ](https://creativecommons.org/licenses/by-nc-sa/4.0/)

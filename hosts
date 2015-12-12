@@ -10,7 +10,7 @@
 # localhost is used to configure the loopback interface
 # when the system is booting. Do not change this entry.
 #
-# Last updated: Fri Dec 12 12:10:00 CST 2015
+# Last updated: Fri Dec 12 20:26:22 CST 2015
 ##
 127.0.0.1	localhost
 255.255.255.255 broadcasthost
@@ -1880,6 +1880,8 @@ fe80::1%lo0 localhost
 64.233.188.129	login.corp.google.com
 64.233.188.129	uberproxy.corp.google.com
 64.233.188.129	uberproxy.l.google.com
+216.239.38.125	certificate-transparency.org
+216.239.38.125	www.certificate-transparency.org
 # Google:others End
 
 # Gmail SMTP/POP/IMAP Start

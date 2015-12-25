@@ -1,4 +1,4 @@
-![](https://www.google.com/logos/2012/halloween-2012-hp.jpg)
+![](http://www.google.com/logos/doodles/2015/holidays-2015-day-3-6399865393250304-hp2x.jpg)
 
 **更多内容请访问[hosts wiki](https://github.com/racaljk/hosts/wiki)**
 

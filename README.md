@@ -6,6 +6,8 @@
 
 > **请注意：下述命令或指导均可能覆盖现有hosts，如现有hosts内容重要的话请备份后再尝试下述方法。**
 
+------------------
+
 ## Windows
 用文本编辑器(如Notepad++|记事本)打开`C:\Windows\System32\drivers\etc`中的hosts文件，  
 把 -> [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) <- 全部内容复制到hosts文件中，保存后通过

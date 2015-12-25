@@ -23,7 +23,7 @@
 ## Mac OS
 可以使用[Gas Mask](http://www.macupdate.com/app/mac/29949/gas-mask/)工具修改
 
-请在`/private/etc/`目录下新建或修改[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)，然后终端输入`sudo killall -HUP mDNSResponder`使其生效。
+或者在`/private/etc/`目录下新建或修改[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)，然后终端输入`sudo killall -HUP mDNSResponder`使其生效。
 
 ## Android
 请在`/system/etc`目录下新建或修改[hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts)，然后通过`开启飞行模式 -> 关闭飞行模式 `的方式使其生效。

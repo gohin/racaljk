@@ -581,6 +581,7 @@ fe80::1%lo0 localhost
 216.239.38.125	v3.cache1.c.docs.google.com
 216.239.38.125	domains.google.com
 216.239.38.125	dl-ssl.google.com
+216.239.38.125	dl.google.com
 216.239.38.125	earth.google.com
 216.239.38.125	auth.keyhole.com
 216.239.38.125	geoauth.google.com

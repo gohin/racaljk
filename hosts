@@ -1013,10 +1013,6 @@ fe80::1%lo0 localhost
 216.239.38.125	www.googleadservices.com
 216.239.38.125	adwords.google.com
 216.239.38.125	adwords.google.sk
-216.239.38.125	partner.googleadservices.com
-216.239.38.125	pagead.google.com
-216.239.38.125	pagead2.googleadservices.com
-216.239.38.125	buttons.googlesyndication.com
 216.239.38.125	www.android.com
 216.239.38.125	android.com
 216.239.38.125	connectivitycheck.android.com
@@ -2844,6 +2840,10 @@ fe80::1%lo0 localhost
 # 216.239.38.125	csi.gstatic.com
 # 216.239.38.125	www-google-analytics.l.google.com
 # 216.239.38.125	www-googletagmanager.l.google.com
+# 216.239.38.125	partner.googleadservices.com
+# 216.239.38.125	pagead.google.com
+# 216.239.38.125	pagead2.googleadservices.com
+# 216.239.38.125	buttons.googlesyndication.com
 # Google CN End
 
 # Google End

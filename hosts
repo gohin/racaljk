@@ -236,6 +236,7 @@ fe80::1%lo0 localhost
 216.239.38.125	com.google
 216.239.38.125	admin.google.com
 216.239.38.125	accounts.google.com
+216.239.38.125	passwords.google.com
 216.239.38.125	bpui0.google.com
 216.239.38.125	cse.google.com
 216.239.38.125	clients1.google.com

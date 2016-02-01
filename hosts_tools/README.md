@@ -6,12 +6,19 @@
 
 - GNU Linux (bash script)
 
+另外，我们还推荐使用跨平台的 [**Hozz**](http://ppoffice.github.io/Hozz) 来管理、自动更新hosts。
+
 -----------------------------------
 
 目前，我们共有：
 
-- HostTool: Windows环境下的hosts自动配置工具，使用C++构建，GUI基于Qt。由@racaljk贡献。
+- Hozz: 跨平台的hosts自动 管理/更新 工具。是@ppoffice的项目。
 
-- `script_tool_for_windows.bat`: Windows环境下的hosts自动配置脚本，由@SMoUNiVeS贡献。
+    - [项目主页](http://ppoffice.github.io/Hozz)
+    - [项目Github主页](https://github.com/ppoffice/Hozz)
 
-- `script_tool_for_linux.bash`: Linux环境下的hosts自动配置脚本，由@lstoars贡献; @fluviusmagnus提供增强版本。
+- HostTool: Windows环境下的hosts自动更新应用，使用C++构建，GUI基于Qt。由@racaljk贡献。
+
+- `script_tool_for_windows.bat`: Windows环境下的hosts一键部署脚本，由@SMoUNiVeS贡献。
+
+- `script_tool_for_linux.bash`: Linux环境下的hosts一键部署脚本，由@lstoars贡献; @fluviusmagnus提供增强版本。

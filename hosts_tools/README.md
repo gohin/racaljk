@@ -10,8 +10,8 @@
 
 目前，我们共有：
 
-- `script_tool_for_windows.bat`: Windows环境下的hosts自动配置脚本，由@SMoUNiVeS贡献。
-
 - HostTool: Windows环境下的hosts自动配置工具，使用C++构建，GUI基于Qt。由@racaljk贡献。
+
+- `script_tool_for_windows.bat`: Windows环境下的hosts自动配置脚本，由@SMoUNiVeS贡献。
 
 - `script_tool_for_linux.bash`: Linux环境下的hosts自动配置脚本，由@lstoars贡献; @fluviusmagnus提供增强版本。

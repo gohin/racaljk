@@ -18,6 +18,9 @@ REM ________________________________________________________________
 echo -----------------------------------------------------------
 echo https://github.com/racaljk/hosts
 echo -----------------------------------------------------------
+echo Backup hosts ...
+copy "%SystemRoot%\System32\drivers\etc\hosts" "%SystemRoot%\System32\drivers\etc\hosts-%date%-%time::=-%"
+echo -----------------------------------------------------------
 :: flush DNS before copy or after copy???
 :: I think it's same.
 ipconfig /flushdns

@@ -14,5 +14,20 @@ if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
 pushd "%CD%"
 CD /D "%~dp0"
 REM ________________________________________________________________
-start %SystemRoot%\notepad.exe "%SystemRoot%\System32\drivers\etc\hosts"
-exit
+::start %SystemRoot%\notepad.exe "%SystemRoot%\System32\drivers\etc\hosts"
+echo -----------------------------------------------------------
+echo https://github.com/racaljk/hosts
+echo -----------------------------------------------------------
+echo Backup hosts ...
+copy "%SystemRoot%\System32\drivers\etc\hosts" "%SystemRoot%\System32\drivers\etc\hosts-%date%-%time::=-%"
+echo -----------------------------------------------------------
+:: flush DNS before copy or after copy???
+:: I think it's same.
+ipconfig /flushdns
+echo -----------------------------------------------------------
+echo Begin to copy hosts ...
+copy "%~dp0..\..\hosts" "%SystemRoot%\System32\drivers\etc\hosts"
+:: pause for user to see what's going on
+:: in case of someone see a black window flash away
+:: and report it to Github issues.
+pause

@@ -55,7 +55,6 @@
 
 > **任何疑问请确认在[wiki](https://github.com/racaljk/hosts/wiki)无法找到解决方案后再[Create A New Issue](https://github.com/racaljk/hosts/issues/new)**
 
------------------------
 
 ## License
 * 本项目的所有代码按照 [MIT License](https://github.com/racaljk/hosts/blob/master/LICENSE)发布。

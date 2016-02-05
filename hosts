@@ -1012,6 +1012,7 @@ fe80::1%lo0 localhost
 220.255.2.153	android.com
 220.255.2.153	connectivitycheck.android.com
 220.255.2.153	developer.android.com
+220.255.2.153   dev.android.com
 220.255.2.153	source.android.com
 220.255.2.153	market.android.com
 220.255.2.153	play.google.com

@@ -1,6 +1,6 @@
 # Copyright (c) 2014-2016, racaljk.
 # https://github.com/racaljk/hosts
-# Last updated: 2016-2-8
+# Last updated: 2016-2-12
 
 # This work is licensed under a CC BY-NC-SA 4.0 International License.
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -72,7 +72,7 @@ fe80::1%lo0 localhost
 96.45.83.209	help.duckduckgo.com
 # DuckDuckGo End
 
-# Facebook
+# Facebook start
 # Please DO NOT Share/Publish Facebook hosts
 
 # No Redirect For wpkg.org
@@ -212,32 +212,30 @@ static.ak.fbcdn.net    origincache-starfacebook-ai-01-05-ash3.facebook.com
 118.214.29.177    s-static.facebook.com
 69.171.235.49    vupload.facebook.com
 69.171.235.49    vupload2.vvv.facebook.com
-# END fb
-# END OF ALL
+# Facebook end
 
-# *
-# Twitter_A
-185.45.5.47   t.co
-185.45.5.41   a0.twimg.com
-185.45.5.41   a1.twimg.com
-185.45.5.41   r.twimg.com
-185.45.5.41   g.twimg.com
-185.45.5.41   ma.twimg.com
-185.45.5.41   p.twimg.com
-185.45.5.41   o.twimg.com
-185.45.5.41   image-proxy-origin.twimg.com
-185.45.5.41   cdn.syndication.twimg.com
-185.45.5.34   about.twitter.com
-185.45.5.34   betastream.twitter.com
-185.45.5.34   blog.twitter.com
-185.45.5.39   cdn.syndication.twitter.com
-185.45.5.34   dev.twitter.com
-185.45.5.34   downloads.tweetdeck.com
-185.45.5.48   mobile.twitter.com
-192.229.237.25   cdn.api.twitter.com
-192.229.237.25   api.twitter.com
-192.229.237.25   abs.twimg.com
-192.229.237.25   pbs.twimg.com
+# Twitter Start
+185.45.5.47	t.co
+185.45.5.54	api.twitter.com
+185.45.5.41	a0.twimg.com
+185.45.5.41	a1.twimg.com
+185.45.5.41	r.twimg.com
+185.45.5.41	abs.twimg.com
+185.45.5.41	g.twimg.com
+185.45.5.41	ma.twimg.com
+185.45.5.41	p.twimg.com
+185.45.5.41	pbs.twimg.com
+185.45.5.41	o.twimg.com
+185.45.5.41	image-proxy-origin.twimg.com
+185.45.5.41	cdn.syndication.twimg.com
+185.45.5.45	about.twitter.com
+185.45.5.45	betastream.twitter.com
+185.45.5.45	blog.twitter.com
+199.59.150.48	cdn.api.twitter.com
+185.45.5.39	cdn.syndication.twitter.com
+185.45.5.45	dev.twitter.com
+185.45.5.35	downloads.tweetdeck.com
+185.45.5.48	mobile.twitter.com
 209.17.68.209	oi40.tinypic.com
 209.17.68.209	oi41.tinypic.com
 209.17.68.209	oi42.tinypic.com
@@ -255,63 +253,62 @@ static.ak.fbcdn.net    origincache-starfacebook-ai-01-05-ash3.facebook.com
 209.17.68.209	oi54.tinypic.com
 209.17.68.209	oi55.tinypic.com
 209.17.68.209	oi56.tinypic.com
-185.45.5.34   pic.twitter.com
-192.229.237.25   platform.twitter.com
-192.229.237.25   preview.cdn.twitter.com
-185.45.5.41   si0.twimg.com
-185.45.5.41   si1.twimg.com
-185.45.5.41   si2.twimg.com
-185.45.5.41   si3.twimg.com
-185.45.5.41   si4.twimg.com
-185.45.5.41   si5.twimg.com
-185.45.5.34   sitestream.twitter.com
-185.45.5.34   stream.twitter.com
-185.45.5.49   support.twitter.com
-185.45.5.34   syndication.twimg.com
-185.45.5.39   syndication.twitter.com
-185.45.5.34   syndication-o.twimg.com
-185.45.5.39   syndication-o.twitter.com
-185.45.5.34   tdweb.twitter.com
-185.45.5.41   ton.twimg.com
-185.45.5.34   tweetdeck.twitter.com
-173.236.110.99   twitpic.com
-173.236.110.99   m1.twitpic.com
-104.244.42.195   twitter.com
-185.45.5.40   upload.twitter.com
-104.244.42.67   analytics.twitter.com
-199.59.150.48   urls-real.api.twitter.com
-108.61.13.60   userstream.twitter.com
-173.236.110.99   web1.twitpic.com
-173.236.110.99   web10.twitpic.com
-173.236.110.99   web2.twitpic.com
-173.236.110.99   web3.twitpic.com
-173.236.110.99   web4.twitpic.com
-173.236.110.99   web5.twitpic.com
-173.236.110.99   web6.twitpic.com
-173.236.110.99   web7.twitpic.com
-173.236.110.99   web8.twitpic.com
-173.236.110.99   web9.twitpic.com
-104.244.42.195   www.twitter.com
-23.44.161.224   p.twitter.com
-204.13.251.34   search.twitter.com
-72.21.80.5   status.twitter.com
-204.13.251.34   assets0.twitter.com
-204.13.251.34    assets1.twitter.com
-204.13.251.34   assets2.twitter.com
-208.78.71.34   assets3.twitter.com
-204.13.251.34   static.twitter.com
-204.13.251.34   help.twitter.com
-199.59.243.21   si0.twimg.co
-199.59.243.120   si1.twimg.co
-199.7.91.13   si2.twimg.co
-199.59.243.21   si3.twimg.co
-199.7.91.13   si4.twimg.co
-199.59.243.120   si5.twimg.co
-185.45.5.34   tweetdeck.com
-185.45.5.34   api.tweetdeck.com
-185.45.5.34   web.tweetdeck.com
-185.45.5.34   www.tweetdeck.com
-# Twitter_B
+185.45.5.45	pic.twitter.com
+192.229.237.25	platform.twitter.com
+192.229.237.25	preview.cdn.twitter.com
+185.45.5.41	si0.twimg.com
+185.45.5.41	si1.twimg.com
+185.45.5.41	si2.twimg.com
+185.45.5.41	si3.twimg.com
+185.45.5.41	si4.twimg.com
+185.45.5.41	si5.twimg.com
+185.45.5.45	sitestream.twitter.com
+185.45.5.45	stream.twitter.com
+185.45.5.49	support.twitter.com
+185.45.5.41	syndication.twimg.com
+185.45.5.39	syndication.twitter.com
+185.45.5.41	syndication-o.twimg.com
+185.45.5.39	syndication-o.twitter.com
+185.45.5.35	tdweb.twitter.com
+185.45.5.41	ton.twimg.com
+185.45.5.35	tweetdeck.twitter.com
+173.236.110.98	twitpic.com
+173.236.110.98	m1.twitpic.com
+104.244.42.195	twitter.com
+185.45.5.40	upload.twitter.com
+104.244.42.67	analytics.twitter.com
+199.59.150.48	urls-real.api.twitter.com
+108.61.13.60	userstream.twitter.com
+173.236.110.98	web1.twitpic.com
+173.236.110.98	web10.twitpic.com
+173.236.110.98	web2.twitpic.com
+173.236.110.98	web3.twitpic.com
+173.236.110.98	web4.twitpic.com
+173.236.110.98	web5.twitpic.com
+173.236.110.98	web6.twitpic.com
+173.236.110.98	web7.twitpic.com
+173.236.110.98	web8.twitpic.com
+173.236.110.98	web9.twitpic.com
+23.44.161.224	p.twitter.com
+204.13.251.34	search.twitter.com
+72.21.80.5	status.twitter.com
+204.13.251.34	assets0.twitter.com
+204.13.251.34	assets1.twitter.com
+204.13.251.34	assets2.twitter.com
+208.78.71.34	assets3.twitter.com
+204.13.251.34	static.twitter.com
+204.13.251.34	help.twitter.com
+199.59.243.21	si0.twimg.co
+199.59.243.120	si1.twimg.co
+199.7.91.13	si2.twimg.co
+199.59.243.21	si3.twimg.co
+199.7.91.13	si4.twimg.co
+199.59.243.120	si5.twimg.co
+185.45.5.35	tweetdeck.com
+185.45.5.35	api.tweetdeck.com
+185.45.5.35	web.tweetdeck.com
+185.45.5.35	www.tweetdeck.com
+# Twitter End
 
 # Gmail web Start
 220.255.2.153	chatenabled.mail.google.com

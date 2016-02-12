@@ -4,9 +4,8 @@
 
 -----------------
 
-> 请注意：下述使用指导均可能覆盖现有hosts，如现有hosts内容重要的话请备份<br>
-> 如果不想手动备份的话，请尝试[Host Tools](https://github.com/racaljk/hosts/tree/master/hosts_tools)/[Hozz](http://blog.zhangruipeng.me/Hozz/)<br>
-> 
+> 请注意：下述使用指导均可能覆盖现有hosts，如现有hosts内容重要的话请备份。  
+> 如果不想手动备份的话，请尝试[Host Tools](https://github.com/racaljk/hosts/tree/master/hosts_tools)/[Hozz](http://blog.zhangruipeng.me/Hozz/)。
 
 ------------------
 

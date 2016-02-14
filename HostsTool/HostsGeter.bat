@@ -38,9 +38,9 @@ echo 正在备份原hosts...
 move %windir%\system32\drivers\etc\hosts %windir%\
 set filename=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
 ren %windir%\hosts %filename%.bak
-echo %filename%.bak >> hostbak.txt
+echo %windir%\%filename%.bak >> hostbak.txt
 
-echo hosts文件已经备份到%windir%，名字为当前的时间，例如20160212182118.bak ，备份的文件名称保存在hostsbak.txt.
+echo hosts文件已经备份到%windir%，名字为%filename% ，路径为：%windir%\%filename% 备份的路径称保存在hostsbak.txt.
 
 move c:\hosts %windir%\system32\drivers\etc\
 echo hosts替换完成.

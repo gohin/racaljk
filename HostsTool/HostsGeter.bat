@@ -7,7 +7,7 @@ mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :st",
 
 copy "%~0" "%windir%\system32\"
 cls
-@REM HostsGet Version0.2
+@REM HostsGet Version0.3.1
 
 @echo off
 del %temp%\download.vbs > nul
@@ -38,9 +38,9 @@ echo 正在备份原hosts...
 move %windir%\system32\drivers\etc\hosts %windir%\
 set filename=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
 ren %windir%\hosts %filename%.bak
-echo %windir%\%filename%.bak >> hostbak.txt
 
-echo hosts文件已经备份到%windir%，名字为%filename% ，路径为：%windir%\%filename% 备份的路径称保存在hostsbak.txt.
+
+echo hosts文件已经备份到%windir%，名字为%filename% ，路径为：%windir%\%filename%  .
 
 move c:\hosts %windir%\system32\drivers\etc\
 echo hosts替换完成.

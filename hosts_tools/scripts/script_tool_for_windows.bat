@@ -1,4 +1,34 @@
 @echo off
+if defined converted goto :converted
+
+set ConverterPath=%temp%\HostsGeter_CodeConverter.vbs
+set ConverterOutput=%temp%\HostsGeter_GBK.bat
+
+echo inputpath="%~0" >%ConverterPath%
+echo outputpath="%ConverterOutput%" >>%ConverterPath%
+echo set stm2=createobject("ADODB.Stream") >>%ConverterPath%
+echo stm2.Charset ="utf-8" >>%ConverterPath%
+echo stm2.Open >>%ConverterPath%
+echo stm2.LoadFromFile inputpath >>%ConverterPath%
+echo readfile = stm2.ReadText >>%ConverterPath%
+echo stm2.Close >>%ConverterPath%
+echo Set Stm1 =CreateObject("ADODB.Stream") >>%ConverterPath%
+echo Stm1.Type = 2 >>%ConverterPath%
+echo Stm1.Open >>%ConverterPath%
+echo Stm1.Charset ="GBK" >>%ConverterPath%
+echo Stm1.Position = Stm1.Size >>%ConverterPath%
+echo Stm1.WriteText "set converted=y" ^& vbcrlf >>%ConverterPath%
+echo Stm1.WriteText readfile >>%ConverterPath%
+echo Stm1.SaveToFile outputpath,2 >>%ConverterPath%
+echo Stm1.Close >>%ConverterPath%
+%ConverterPath% && %ConverterOutput%
+goto :eof
+
+:converted
+
+chcp 936
+:: 更改cmd窗口代码页至 936(GBK)
+
 cls
 %1 %2
 ver|find " 5.">nul &&goto :st
@@ -6,9 +36,8 @@ echo 正在进行 UAC 提权...
 mshta vbscript:createobject("shell.application").shellexecute("%~s0","goto :st","","runas",1)(window.close)&goto :eof
 :st
 
-copy "%~0" "%windir%\system32\"
 cls
-::@echo off
+
 @REM HostsGet Version0.4
 cd /d %~dp0
 

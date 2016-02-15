@@ -19,6 +19,6 @@
 
 - HostTool: Windows 环境下的 hosts 自动更新应用，使用 **C++** 构建， GUI 基于 **Qt** 。由 @racaljk 贡献。
 
-- [`script_tool_for_windows.bat`](scripts/script_tool_for_windows.bat): Windows 环境下的 hosts 一键部署脚本，由 @redapple0204 与 @lizongzeshunshun 贡献。
+- [`script_tool_for_windows.bat`](scripts/script_tool_for_windows.bat): Windows 环境下的 hosts 一键部署脚本，由 @redapple0204 与 @lizongzeshunshun 贡献。以及 @lideming 提供的重要更新。
 
 - [`script_tool_for_linux.bash`](scripts/script_tool_for_linux.sh): Linux 环境下的 hosts 一键部署脚本，由 @lstoars 贡献; @fluviusmagnus 提供增强版本。

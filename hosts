@@ -1,6 +1,6 @@
 # Copyright (c) 2014-2016, racaljk.
 # https://github.com/racaljk/hosts
-# Last updated: 2016-2-15
+# Last updated: 2016-2-17
 
 # This work is licensed under a CC BY-NC-SA 4.0 International License.
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -320,6 +320,7 @@ static.ak.fbcdn.net    origincache-starfacebook-ai-01-05-ash3.facebook.com
 220.255.2.153	m.googlemail.com
 220.255.2.153	mail.google.com
 220.255.2.153	www.gmail.com
+64.233.162.84 mail-settings.google.com
 # Gmail web End
 
 # Google Start

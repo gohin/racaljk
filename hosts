@@ -128,6 +128,9 @@ fe80::1%lo0 localhost
 66.220.158.69    facebook.com
 66.220.158.69    www.facebook.com
 66.220.158.69    apps.facebook.com
+66.220.158.69    upload.facebook.com
+66.220.158.69    developers.facebook.com
+66.220.158.69    fbcdn.net
 165.254.42.232    profile.ak.fbcdn.net
 173.252.71.184    vpn.tfbnw.net
 184.28.188.240    vthumb.ak.fbcdn.net
@@ -140,12 +143,9 @@ fe80::1%lo0 localhost
 184.28.188.171    photos-g.ak.fbcdn.net
 184.28.188.146    photos-h.ak.fbcdn.net
 184.28.188.171    creative.ak.fbcdn.net
-66.220.158.69    fbcdn.net
 184.28.188.153    external.ak.fbcdn.net
 184.28.188.153    b.static.ak.fbcdn.net
 184.28.188.153    static.ak.fbcdn.net
-66.220.158.69    upload.facebook.com
-66.220.158.69    developers.facebook.com
 184.28.188.153    act.channel.facebook.com
 184.28.188.153    0-act.channel.facebook.com
 184.28.188.153    1-act.channel.facebook.com
@@ -154,11 +154,11 @@ fe80::1%lo0 localhost
 184.28.188.153    4-act.channel.facebook.com
 184.28.188.153    5-act.channel.facebook.com
 184.28.188.153    6-act.channel.facebook.com
+184.28.188.153    origincache-ai-01-05-ash3.fbcdn.net
+184.28.188.153    inyour-slb-01-05-ash3.facebook.com
+184.28.188.153    origincache-starfacebook-ai-01-05-ash3.facebook.com
 69.171.246.7    beta-chat-01-05-ash3.facebook.com
-static.ak.fbcdn.net    origincache-ai-01-05-ash3.fbcdn.net
 69.171.235.9    static.thefacebook.com
-static.ak.fbcdn.net    inyour-slb-01-05-ash3.facebook.com
-static.ak.fbcdn.net    origincache-starfacebook-ai-01-05-ash3.facebook.com
 69.171.246.16    channel-ecmp-05-ash3.facebook.com
 69.171.246.17    channel-staging-ecmp-05-ash3.facebook.com
 69.171.246.18    channel-testing-ecmp-05-ash3.facebook.com

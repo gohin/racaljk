@@ -1,6 +1,6 @@
-![](http://www.andorrainternational.com/wp-content/uploads/2016/01/Chinese-2016-new-year-with-monkey-year-creative-vector-03.jpg)
+![](https://www.google.com.sg/logos/doodles/2016/lantern-festival-2016-4824959689949184.2-hp.jpg)
 
-# 欢迎使用hosts！祝各位新年快乐！
+# 欢迎使用hosts！
 
 
 1. 下述使用指导均可能覆盖现有 hosts ，如现有 hosts 内容重要的话请事先备份。您也可以使用我们的 [**Host Tools**](https://github.com/racaljk/hosts/tree/master/hosts_tools) 来自动化 备份/配置 的工作。

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # script_tool_for_linux
 #
@@ -9,7 +9,7 @@
 # @WARNING: the script CAN NOT replace other hosts rules.
 #           If you have others provided hosts rules, maybe get conflict.
 #
-if [ ${UID} == 0 ]; then
+if [ `id -u` -eq 0 ]; then
     wget 'https://raw.githubusercontent.com/racaljk/hosts/master/hosts' -O /tmp/fetchedhosts
     sed -i '/# Copyright (c) 2014/,/# Modified hosts end/d' /etc/hosts
 

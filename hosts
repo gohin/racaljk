@@ -212,6 +212,11 @@ fe80::1%lo0	localhost
 104.78.23.174	connect.facebook.net
 # Facebook end
 
+# FlipBoard start
+54.225.64.251	beacon.flipboard.com
+54.225.64.251	fbprod.flipboard.com
+# FlipBoard End
+
 # Twitter Start
 104.244.42.1	twitter.com
 104.244.42.1	www.twitter.com

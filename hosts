@@ -3629,7 +3629,7 @@ fe80::1%lo0	localhost
 # Yahoo End
 
 # Travis CI fastly CDN Start
-103.245.222.249	travis-ci-org.global.ssl.fastly.net
+103.245.222.249  travis-ci-org.global.ssl.fastly.net
 # Travis CI fastly CDN End
 
 # Github start

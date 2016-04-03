@@ -12,14 +12,17 @@
 
 #pragma comment(lib,"wininet.lib")
 
+#define ___userAgent TEXT("Mozilla/4.0 (compatible; Windows NT 5.1)")
+
 
 bool Func_DownloadEx(const TCHAR * url,const TCHAR * file,const DWORD FileAttributes){
+	const size_t dwBuffer=2048;	//buffer size
 	HINTERNET hWeb,hRequest;		//Internet request handle
 	DWORD dwReadByte=0,dwReserved;		//read byte count
-	TCHAR szBuffer[2000]=TEXT("");		//read buff
+	char szBuffer[dwBuffer]="";		//read buff
 	HANDLE hdFile=INVALID_HANDLE_VALUE;	//file handle
 	//bug check begin
-	if (!(hWeb=InternetOpen(TEXT("Mozilla/4.0 (compatible) Poison"),INTERNET_OPEN_TYPE_PRECONFIG,NULL,NULL,0))) return false;
+	if (!(hWeb=InternetOpen(___userAgent,INTERNET_OPEN_TYPE_PRECONFIG,NULL,NULL,0))) return false;
 	if (!(hRequest=InternetOpenUrl(hWeb,url,NULL,0,INTERNET_FLAG_DONT_CACHE,0))){
 		InternetCloseHandle(hWeb);
 		return false;
@@ -30,8 +33,8 @@ bool Func_DownloadEx(const TCHAR * url,const TCHAR * file,const DWORD FileAttrib
 		return false;
 	}
 	//end.
-	while (InternetReadFile(hRequest,(PVOID)szBuffer,2000*sizeof(TCHAR),&dwReadByte) && dwReadByte)
-		WriteFile(hdFile,szBuffer,dwReadByte*sizeof(TCHAR),&dwReserved,NULL);
+	while (InternetReadFile(hRequest,(PVOID)szBuffer,dwBuffer,&dwReadByte) && dwReadByte)
+		WriteFile(hdFile,szBuffer,dwReadByte,&dwReserved,NULL);
 	CloseHandle(hdFile);
 	InternetCloseHandle(hRequest);
 	InternetCloseHandle(hWeb);
@@ -41,3 +44,5 @@ bool Func_DownloadEx(const TCHAR * url,const TCHAR * file,const DWORD FileAttrib
 inline bool __fastcall Func_Download(const TCHAR *url,const TCHAR *file){//for backward compatibility
 	return Func_DownloadEx(url,file,FILE_ATTRIBUTE_NORMAL);
 }
+
+

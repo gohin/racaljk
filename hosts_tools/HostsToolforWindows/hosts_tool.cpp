@@ -47,7 +47,7 @@ There seems something wrong in download file, we will retry after 5 seconds.\n")
 #define DownLocated _T(".\\hosts")
 #define ChangeCTLR _T(".\\hostsq")
 #define BAD_EXIT \
-		_tprintf(_T("Bad Parameters.\n")),\
+		_tprintf(_T("Bad Parameters.\nUsing [program-name] -? to show how to use.\n")),\
 		abort();
 const size_t localbufsize=1024;
 
@@ -417,8 +417,8 @@ DWORD __stdcall HostThread(LPVOID){
 		Func_FastPMNSS(_T("           Or open new issue.(https://github.com/racaljk/hosts)\n"));
 		Func_FastPMNTS(_T("Start replace hosts file.\n"));
 		try {
-			for (int _count=0;!Func_Download(hostsfile,DownLocated);_count++,Sleep(30000))
-				if (_count>2) for (_count=0;!Func_Download(hostsfile,DownLocated);_count++,Sleep(30000))
+			for (int _count=0;!Func_Download(hostsfile,DownLocated);_count++,Sleep(10000))
+				if (_count>2) for (_count=0;!Func_Download(hostsfile,DownLocated);_count++,Sleep(10000))
 						if (_count>2) THROWERR(_T("DownLoad hosts file Error!"));
 			if (!((fp=_tfopen(DownLocated,_T("r"))) && (_=_tfopen(ChangeCTLR,_T("w")))))
 				THROWERR(_T("Open file Error!"));

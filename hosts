@@ -3990,6 +3990,13 @@ fe80::1%lo0	localhost
 
 # Github start
 192.30.252.141	gist.github.com
+23.235.44.133	assets-cdn.github.com
+23.235.44.133	raw.githubusercontent.com
+23.235.44.133	camo.githubusercontent.com
+23.235.44.133	avatars0.githubusercontent.com
+23.235.44.133	avatars1.githubusercontent.com
+23.235.44.133	avatars2.githubusercontent.com
+23.235.44.133	avatars3.githubusercontent.com
 # Github end
 
 # W3schools Start

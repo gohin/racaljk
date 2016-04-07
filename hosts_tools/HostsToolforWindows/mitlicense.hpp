@@ -3,7 +3,7 @@
 #pragma once
 
 TCHAR szMitLicenseRaw[]=_T("\n\
-The MIT License(MIT)(redefined£©\n\
+The MIT License(MIT)(redefined)\n\
 \n\
 Copyright(c) 2016 Too-Naive E-mail:sweheartiii@hotmail.com\n\
 \n\

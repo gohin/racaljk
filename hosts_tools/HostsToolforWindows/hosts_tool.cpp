@@ -98,7 +98,7 @@ int __fastcall __Check_Parameters(int,TCHAR const**);
 void WINAPI Service_Main(DWORD, LPTSTR *);
 void WINAPI Service_Control(DWORD);
 DWORD CALLBACK Main_Thread(LPVOID);
-void Func_Service_Install(const TCHAR *);
+void Func_Service_Install();
 void Func_Service_UnInstall();
 void NormalEntry();
 bool Func_CheckDiff(const TCHAR*,const TCHAR*) throw(expection);
@@ -112,15 +112,24 @@ TCHAR DEFBUF(buf1,localbufsize),DEFBUF(buf2,localbufsize),
 	DEFBUF(buf3,localbufsize),DEFBUF(szline,localbufsize);
 
 enum _Parameters{
-	EXEC_START_NORMAL		=1,
-//	EXEC_START_RUNAS		=2,
-	EXEC_START_SERVICE		=4,
-	EXEC_START_INSTALL_SERVICE	=8,
-	EXEC_START_UNINSTALL_SERVICE	=16,
-	EXEC_START_HELP			=32,
-	EXEC_DEBUG_RESET		=64,
-	SHOW_LICENSE			=128,
-	EXEC_BAD_PARAMETERS		=65536
+	EXEC_START_NORMAL		=1<<0x00,
+//	EXEC_START_RUNAS		=1<<0x01,
+	EXEC_START_SERVICE		=1<<0x02,
+	EXEC_START_INSTALL_SERVICE	=1<<0x03,
+	EXEC_START_UNINSTALL_SERVICE	=1<<0x04,
+	EXEC_START_HELP			=1<<0x05,
+	EXEC_DEBUG_RESET		=1<<0x06,
+	SHOW_LICENSE			=1<<0x07,
+	PARAMETERS_RESERVED1	=1<<0x08,
+	PARAMETERS_RESERVED2	=1<<0x09,
+	PARAMETERS_RESERVED3	=1<<0x0a,
+	PARAMETERS_RESERVED4	=1<<0x0b,
+	PARAMETERS_RESERVED5	=1<<0x0c,
+	PARAMETERS_RESERVED6	=1<<0x0d,
+	PARAMETERS_RESERVED7	=1<<0x0e,
+	PARAMETERS_RESERVED8	=1<<0x0f,
+	PARAMETERS_RESERVED9	=1<<0x10,
+	EXEC_BAD_PARAMETERS		=1073741824
 };
 
 
@@ -167,7 +176,7 @@ int _tmain(int argc,TCHAR const ** argv){
 	switch (__Check_Parameters(argc,argv)){
 /*		CASE(EXEC_START_NORMAL,Shell("-rrun"));
 		CASE(EXEC_START_RUNAS|EXEC_START_NORMAL,NormalEntry());
-		CASE(EXEC_START_RUNAS|EXEC_START_INSTALL_SERVICE,Func_Service_Install(argv[0]));
+		CASE(EXEC_START_RUNAS|EXEC_START_INSTALL_SERVICE,Func_Service_Install());
 		CASE(EXEC_START_RUNAS|EXEC_START_UNINSTALL_SERVICE,Func_Service_UnInstall());
 		CASE(EXEC_START_INSTALL_SERVICE,Shell("-rinstall"));
 		CASE(EXEC_START_UNINSTALL_SERVICE,Shell("-runinstall"));
@@ -177,7 +186,7 @@ int _tmain(int argc,TCHAR const ** argv){
 		_tprintf(_T("Bad Parameters."));
 		abort();*/
 		CASE(EXEC_START_NORMAL,NormalEntry());
-		CASE(EXEC_START_INSTALL_SERVICE,Func_Service_Install(argv[0]));
+		CASE(EXEC_START_INSTALL_SERVICE,Func_Service_Install());
 		CASE(EXEC_START_UNINSTALL_SERVICE,Func_Service_UnInstall());
 		CASE(EXEC_START_SERVICE,StartServiceCtrlDispatcher(STE));
 		CASE(EXEC_START_HELP,__show_str(SHOW_HELP,Sname));
@@ -260,16 +269,22 @@ void Func_Service_UnInstall(){
 	try{
 		if (!GetEnvironmentVariable(_T("SystemRoot"),buf2,BUFSIZ))
 			THROWERR(_T("GetEnvironmentVariable() Error in UnInstall Service."));
-		_stprintf(buf1,_T("%s\\hoststools.exe"),buf2);
+		_stprintf(buf1,_T("%s\\hoststools.exe"),buf2);/*
+		if (!GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)));
+			THROWERR(_T("GetModuleFileName() Error in Uninstall Service."));
+		if (!_tcscmp(buf1,szline)) THROWERR(_T("Please"))*/
 		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
 			THROWERR(_T("OpenSCManager() Error in Uninstall service."));
 		if (!(shSvc=OpenService(shMang,Sname,SERVICE_ALL_ACCESS)))
 			THROWERR(_T("OpenService() Error in Uninstall service."));
 		if (!ControlService(shSvc,SERVICE_CONTROL_STOP,&ss))
 			THROWERR(_T("ControlService() Error in Uninstall service."));
-		Sleep(1000);//Wait for service stop
-		if (!DeleteService(shSvc))
-			THROWERR(_T("DeleteService() Error in UnInstall service."));
+		Sleep(2000);//Wait for service stop
+		if (!DeleteService(shSvc)){
+			_tprintf(_T("Executable File located:%s\n"),buf1);
+			THROWERR(_T("DeleteService() Error in UnInstall service.\n\
+You may should delete it manually."));
+		}
 		if (!DeleteFile(buf1))
 			THROWERR(_T("DeleteFile() Error in Uninstall service."));
 	}
@@ -315,7 +330,7 @@ Please contact the application's support team for more information.\n"),
 }
 
 
-void Func_Service_Install(const TCHAR * st){
+void Func_Service_Install(){
 	SC_HANDLE shMang=NULL,shSvc=NULL;
 	_tprintf(_T("    LICENSE:MIT LICENSE\n    Copyright (C) 2016 @Too-Naive\n\n"));
 	_tprintf(_T("    Bug report:sweheartiii[at]hotmail.com \n\t       Or open new issue\n\
@@ -325,8 +340,10 @@ void Func_Service_Install(const TCHAR * st){
 			THROWERR(_T("GetEnvironmentVariable() Error in Install Service."));
 		_stprintf(buf1,_T("%s\\hoststools.exe"),buf3);
 		_stprintf(buf2,_T("%s\\hoststools.exe -svc"),buf3);
+		if (GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)))
+			THROWERR(_T("GetModuleFileName() Error in Install Service."));
 		_tprintf(_T("    Step1:Copy file.\n"));
-		if (!CopyFile(st,buf1,FALSE))
+		if (!CopyFile(szline,buf1,FALSE))
 			THROWERR(_T("CopyFile() Error in Install Service.(Is service has been installed?)"));
 		_tprintf(_T("    Step2:Connect to SCM.\n"));
 		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
@@ -495,4 +512,3 @@ void WINAPI Service_Control(DWORD dwControl){
 	}
 	return ;
 }
-

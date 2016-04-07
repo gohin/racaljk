@@ -1,6 +1,6 @@
 # Download Executable File
 
-Download address:[hosts_tool.exe](https://git.io/vVV5f)
+Download address:[hosts_tool.exe](https://git.io/vVKmr)
 
 # Hosts Tool
 
@@ -22,7 +22,7 @@ main program file: `hosts_tool.exe`
 
 安装服务后 日志文件会保存在`c:\Hosts_Tool_log.log`下 您可以通过查看日志观察服务的工作状态
 
-卸载服务请使用原来的`hosts_tool.exe`文件 请不要在命令行中直接执行`hosts_tool -fu`
+卸载服务请使用原来的`hosts_tool.exe`文件 请不要在命令行中直接执行`hosts_tool -fu`(如执行 需要手动删除`%SystemRoot%`目录下的`hoststools.exe`)
 
 请间隔一段时间后清理`%SystemRoot%\system32\drivers\etc\`文件夹 (因为可能堆满了备份的文件)
 
@@ -51,7 +51,7 @@ windres hosts_tool.rc -o hosts_toolr.o
 g++ -o hosts_tool.exe hosts_tool.cpp hosts_toolr.o -lwininet -O2 -s
 ```
 
-`hosts_tool.exe.manifest`:
+File `hosts_tool.exe.manifest`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

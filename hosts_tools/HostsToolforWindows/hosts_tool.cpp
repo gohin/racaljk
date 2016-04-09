@@ -38,18 +38,19 @@
 #define hostsfile _T("https://raw.githubusercontent.com/racaljk/hosts/master/hosts")
 #define hostsfile1 _T("https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts")
 #define objectwebsite _T("https://github.com/racaljk/hosts")
-//#define Shell(x) ShellExecute(NULL,(_os_.dwMajorVersion<=5)?_T("open"):_T("runas"),argv[0],_T(x),NULL,SW_SHOWNORMAL)
 
 #define CASE(x,y) case x : y; break;
 #define pWait _T("\n    \
 There seems something wrong in download file, we will retry after 5 seconds.\n")
 
-#define DownLocated _T(".\\hosts")
-#define ChangeCTLR _T(".\\hostsq")
+#define DownLocated _T("hosts.tmp")
+#define ChangeCTLR _T("hostsq.tmp")
 #define BAD_EXIT \
 		_tprintf(_T("Bad Parameters.\nUsing [program-name] -? to show how to use.\n")),\
 		abort();
+#define LogFileLocate _T("c:\\Hosts_Tool_log.log")
 const size_t localbufsize=1024;
+
 
 struct expection{
 	const TCHAR *Message;
@@ -58,8 +59,13 @@ struct expection{
 	}
 };
 
-#define SHOW_HELP _T("\n\
-Usage: hosts_tool [-fi | -fu | -h | -? | -show]\n\n\n\
+
+#define SHOW_HELP _T("\
+------------------------------------------------------------\n\
+Hosts Tool for Windows Console by: Too-Naive\n\
+Copyright (C) 2016 @Too-Naive License:MIT LICENSE(redefined)\n\
+------------------------------------------------------------\n\n\
+Usage: hosts_tool [-fi | -fu | -h | -? | -show]\n\n\
 Options:\n\
     -h    : Show this help message.\n\
     -?    : Show this help message.\n\
@@ -67,9 +73,7 @@ Options:\n\
     -fu   : Uninstall service.\n\
     -show : Show the MIT license(redefined)\n\
 Example:\n\
-    hosts_tool -fi\n\n\
-    Copyright (C) 2016 @Too-Naive\n\
-    License:MIT LICENSE\n\n\n")
+    hosts_tool -fi\n\n")
 
 
 #define welcomeShow _T("\
@@ -103,7 +107,7 @@ void Func_Service_UnInstall();
 void NormalEntry();
 bool Func_CheckDiff(const TCHAR*,const TCHAR*) throw(expection);
 DWORD __stdcall HostThread(LPVOID);
-void ___debug_point_reset();
+void ___debug_point_reset(int);
 inline void __show_str(TCHAR const *,TCHAR const *);
 
 SERVICE_TABLE_ENTRY STE[2]={{Sname,Service_Main},{NULL,NULL}};
@@ -120,15 +124,15 @@ enum _Parameters{
 	EXEC_START_HELP			=1<<0x05,
 	EXEC_DEBUG_RESET		=1<<0x06,
 	SHOW_LICENSE			=1<<0x07,
-	PARAMETERS_RESERVED1	=1<<0x08,
-	PARAMETERS_RESERVED2	=1<<0x09,
-	PARAMETERS_RESERVED3	=1<<0x0a,
-	PARAMETERS_RESERVED4	=1<<0x0b,
-	PARAMETERS_RESERVED5	=1<<0x0c,
-	PARAMETERS_RESERVED6	=1<<0x0d,
-	PARAMETERS_RESERVED7	=1<<0x0e,
-	PARAMETERS_RESERVED8	=1<<0x0f,
-	PARAMETERS_RESERVED9	=1<<0x10,
+	DEBUG_1				=1<<0x08,
+	DEBUG_2				=1<<0x09,
+	DEBUG_3				=1<<0x0a,
+	PARAMETERS_RESERVED4		=1<<0x0b,
+	PARAMETERS_RESERVED5		=1<<0x0c,
+	PARAMETERS_RESERVED6		=1<<0x0d,
+	PARAMETERS_RESERVED7		=1<<0x0e,
+	PARAMETERS_RESERVED8		=1<<0x0f,
+	PARAMETERS_RESERVED9		=1<<0x10,
 	EXEC_BAD_PARAMETERS		=1073741824
 };
 
@@ -141,9 +145,12 @@ TCHAR const *__const_Parameters[]={
 	_T("fi"),
 	_T("fu"),
 	_T("h"),
-	_T("-debug-point-reset"),
+	_T("-debug-reset"),
 	_T("show"),
-	_T("?")
+	_T("?"),
+	_T("-debug-stop"),
+	_T("-debug-start"),
+	_T("-debug-reinstall")
 };
 
 int __fastcall __Check_Parameters(int argc,TCHAR const **argv){
@@ -164,6 +171,9 @@ int __fastcall __Check_Parameters(int argc,TCHAR const **argv){
 		case 3: return EXEC_START_HELP;
 		case 4: return EXEC_DEBUG_RESET;
 		case 5: return SHOW_LICENSE;
+		case 7: return DEBUG_1;
+		case 8: return DEBUG_2;
+		case 9: return DEBUG_3;
 		default: BAD_EXIT;
 	}
 	BAD_EXIT
@@ -174,24 +184,16 @@ int __fastcall __Check_Parameters(int argc,TCHAR const **argv){
 int _tmain(int argc,TCHAR const ** argv){
 	SetConsoleTitle(_T("racaljk-host tools"));
 	switch (__Check_Parameters(argc,argv)){
-/*		CASE(EXEC_START_NORMAL,Shell("-rrun"));
-		CASE(EXEC_START_RUNAS|EXEC_START_NORMAL,NormalEntry());
-		CASE(EXEC_START_RUNAS|EXEC_START_INSTALL_SERVICE,Func_Service_Install());
-		CASE(EXEC_START_RUNAS|EXEC_START_UNINSTALL_SERVICE,Func_Service_UnInstall());
-		CASE(EXEC_START_INSTALL_SERVICE,Shell("-rinstall"));
-		CASE(EXEC_START_UNINSTALL_SERVICE,Shell("-runinstall"));
-		CASE(EXEC_START_SERVICE,StartServiceCtrlDispatcher(STE));
-		CASE(EXEC_START_HELP,_tprintf(SHOW_HELP,Sname));*/
-/*		case EXEC_BAD_PARAMETERS:
-		_tprintf(_T("Bad Parameters."));
-		abort();*/
 		CASE(EXEC_START_NORMAL,NormalEntry());
 		CASE(EXEC_START_INSTALL_SERVICE,Func_Service_Install());
 		CASE(EXEC_START_UNINSTALL_SERVICE,Func_Service_UnInstall());
 		CASE(EXEC_START_SERVICE,StartServiceCtrlDispatcher(STE));
 		CASE(EXEC_START_HELP,__show_str(SHOW_HELP,Sname));
-		CASE(EXEC_DEBUG_RESET,___debug_point_reset());
+		CASE(EXEC_DEBUG_RESET,___debug_point_reset(EXEC_DEBUG_RESET));
 		CASE(SHOW_LICENSE,__show_str(szMitLicenseRaw,NULL));
+		CASE(DEBUG_1,___debug_point_reset(DEBUG_1));
+		CASE(DEBUG_2,___debug_point_reset(DEBUG_2));
+		CASE(DEBUG_3,___debug_point_reset(DEBUG_3));
 		default:break;
 	}
 	return 0;
@@ -214,17 +216,20 @@ void NormalEntry(){
 	_tprintf(_T("    Bug report:sweheartiii[at]hotmail.com \n\t       Or open new issue\n\n\n"));
 	_tprintf(_T("    Start replace hosts file:\n    Step1:Get System Driver..."));
 	try {
+		int errcunt;
 		if (!GetEnvironmentVariable(_T("SystemRoot"),buf3,BUFSIZ))
 			THROWERR(_T("GetEnvironmentVariable() Error!\n\tCannot get system path!"));
 		_stprintf(buf1,_T("%s\\system32\\drivers\\etc\\hosts"),buf3);
 		_stprintf(buf2,_T("%s\\system32\\drivers\\etc\\hosts.%04d%02d%02d.%02d%02d%02d"),
 		buf3,st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
 		_tprintf(_T("\t\tDone.\n    Step2:Download hosts file..."));
-		for (int _count=0;!Func_Download(hostsfile,DownLocated);
-			_count++,_tprintf(pWait),Sleep(5000),_tprintf(_T("\tDownload hosts file...")))
-			if (_count>2) for (_count=0,_tprintf(_T("\tDownload hosts file..."));
-								!Func_Download(hostsfile,DownLocated);_count++,Sleep(5000))
-									if (_count>2) THROWERR(_T("DownLoad hosts file Error!"));
+		//download
+		for (int errcunt=0;!Func_Download(hostsfile,DownLocated)&& errcunt<2;
+			errcunt++,_tprintf(pWait),Sleep(5000),_tprintf(_T("\tDownload hosts file...")));
+		if (errcunt>1) 	for (errcunt=0,_tprintf(_T("\tDownload hosts file..."));
+							!Func_Download(hostsfile1,DownLocated);errcunt++,Sleep(5000))
+					if (errcunt>1) THROWERR(_T("DownLoad hosts file Error!"));
+		//end.
 		_tprintf(_T("\t100%%\n    Step3:Change Line Endings..."));
 		if (!((fp=_tfopen(DownLocated,_T("r"))) && (_=_tfopen(ChangeCTLR,_T("w")))))
 			THROWERR(_T("Open file Error!"));
@@ -303,18 +308,30 @@ Please contact the application's support team for more information.\n"),
 	return ;
 }
 
-void ___debug_point_reset(){
+void ___debug_point_reset(int _par){
 	SC_HANDLE shMang=NULL,shSvc=NULL;
+	if (_par==DEBUG_3){
+		Func_Service_UnInstall();
+		Func_Service_Install();
+		return ;
+	}
 	try {
 		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
 			THROWERR(_T("OpenSCManager() Error in debug_reset."));
-		if (!(shSvc=OpenService(shMang,Sname,SERVICE_ALL_ACCESS)))
-			THROWERR(_T("OpenService() Error in debug_reset."));
-		if (!ControlService(shSvc,SERVICE_CONTROL_STOP,&ss))
-			THROWERR(_T("ControlService() Error in debug_reset."));
-		Sleep(1000);
-		if (!StartService(shSvc,1,SzName))
-			THROWERR(_T("StartService() Error in debug_reset."));
+		switch(_par){
+			case DEBUG_1:
+			case EXEC_DEBUG_RESET:
+				if (!(shSvc=OpenService(shMang,Sname,SERVICE_ALL_ACCESS)))
+					THROWERR(_T("OpenService() Error in debug_reset."));
+				if (!ControlService(shSvc,SERVICE_CONTROL_STOP,&ss))
+					THROWERR(_T("ControlService() Error in debug_reset."));
+				Sleep(1000);
+				if (_par==DEBUG_1) break;
+			case DEBUG_2:
+				if (!StartService(shSvc,1,SzName))
+					THROWERR(_T("StartService() Error in debug_reset."));
+			default : break;
+		}
 	}
 	catch (expection re){
 		_tprintf(_T("\nFatal Error:\n%s (GetLastError():%ld)\n\
@@ -325,8 +342,10 @@ Please contact the application's support team for more information.\n"),
 		CloseServiceHandle(shMang);
 		abort();
 	}
+	_tprintf(_T("Exited debug mode.\n"));
 	CloseServiceHandle(shSvc);
 	CloseServiceHandle(shMang);
+	return ;
 }
 
 
@@ -340,7 +359,7 @@ void Func_Service_Install(){
 			THROWERR(_T("GetEnvironmentVariable() Error in Install Service."));
 		_stprintf(buf1,_T("%s\\hoststools.exe"),buf3);
 		_stprintf(buf2,_T("%s\\hoststools.exe -svc"),buf3);
-		if (GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)))
+		if (!GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)))
 			THROWERR(_T("GetModuleFileName() Error in Install Service."));
 		_tprintf(_T("    Step1:Copy file.\n"));
 		if (!CopyFile(szline,buf1,FALSE))
@@ -363,12 +382,13 @@ void Func_Service_Install(){
 				if (!(shSvc=CreateService(shMang,Sname,_T("racaljk-hosts Tool"),
 				SERVICE_ALL_ACCESS,SERVICE_WIN32_OWN_PROCESS,SERVICE_AUTO_START,SERVICE_ERROR_NORMAL,
 				buf2,NULL,NULL,NULL,NULL,NULL)))
-						THROWERR(_T("CreateService() failed.(2)")),CloseServiceHandle(shMang);
+					THROWERR(_T("CreateService() failed.(2)")),CloseServiceHandle(shMang);
 			}
 			else
 			THROWERR(_T("CreateService() failed."));
 		}
-		else MessageBox(NULL,_T("Service installed successfully"),_T("Congratulations!"),MB_SETFOREGROUND|MB_ICONINFORMATION);
+		else //MessageBox(NULL,_T("Service installed successfully"),_T("Congratulations!"),MB_SETFOREGROUND|MB_ICONINFORMATION);
+			_tprintf(_T("Install service successfully.\n"));
 		if (!(shSvc=OpenService(shMang,Sname,SERVICE_START)))
 			THROWERR(_T("OpenService() Failed"));
 		else
@@ -382,6 +402,7 @@ Please contact the application's support team for more information.\n"),runtimeE
 		abort();
 	}
 	MessageBox(NULL,_T("Service started successfully"),_T("Congratulations!"),MB_SETFOREGROUND|MB_ICONINFORMATION);
+	system("pause");
 	CloseServiceHandle(shMang);
 	CloseServiceHandle(shSvc);
 	return ;
@@ -414,29 +435,32 @@ bool Func_CheckDiff(const TCHAR *lFilePath, const TCHAR * rFilePath) throw(expec
     return true;
 }
 
-
 DWORD __stdcall HostThread(LPVOID){
 	SYSTEMTIME st={0,0,0,0,0,0,0,0};
 	FILE * fp=NULL,*_=NULL;
-	Func_SetErrorFile(_T("c:\\Hosts_Tool_log.log"),_T("a+"));
+	Func_SetErrorFile(LogFileLocate,_T("a+"));
 	if (!GetEnvironmentVariable(_T("SystemRoot"),buf3,BUFSIZ))
 		THROWERR(_T("GetEnvironmentVariable() Error!\n\tCannot get system path!"));
 	_stprintf(buf1,_T("%s\\system32\\drivers\\etc\\hosts"),buf3);
+	Func_FastPMNTS(_T("Open log file.\n"));
+	Func_FastPMNTS(_T("LICENSE:MIT LICENSE\n"));
+	Func_FastPMNSS(_T("Copyright (C) 2016 Too-Naive\n"));
+	Func_FastPMNSS(_T("Bug report:sweheartiii[at]hotmail.com\n"));
+	Func_FastPMNSS(_T("           Or open new issue.(https://github.com/racaljk/hosts)\n"));
 	while (1){
 		Sleep(60000);//Waiting for network
 		GetLocalTime(&st);
 		_stprintf(buf2,_T("%s\\system32\\drivers\\etc\\hosts.%04d%02d%02d.%02d%02d%02d"),
 		buf3,st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
-		Func_FastPMNTS(_T("Open log file.\n"));
-		Func_FastPMNTS(_T("LICENSE:MIT LICENSE\n"));
-		Func_FastPMNSS(_T("Copyright (C) 2016 Too-Naive\n"));
-		Func_FastPMNSS(_T("Bug report:sweheartiii[at]hotmail.com\n"));
-		Func_FastPMNSS(_T("           Or open new issue.(https://github.com/racaljk/hosts)\n"));
 		Func_FastPMNTS(_T("Start replace hosts file.\n"));
 		try {
-			for (int _count=0;!Func_Download(hostsfile,DownLocated);_count++,Sleep(10000))
-				if (_count>2) for (_count=0;!Func_Download(hostsfile,DownLocated);_count++,Sleep(10000))
-						if (_count>2) THROWERR(_T("DownLoad hosts file Error!"));
+			int errcunt;
+			for (errcunt=0;!Func_Download(hostsfile,DownLocated) && errcunt<2;errcunt++,Sleep(10000));
+//				Func_FastPMNTS("1\n");
+			if (errcunt>1) for (errcunt=0;!Func_Download(hostsfile1,DownLocated);errcunt++,Sleep(10000)){
+//				Func_FastPMNTS("2\n");
+				if (errcunt>1) THROWERR(_T("DownLoad hosts file Error!"));
+			}
 			if (!((fp=_tfopen(DownLocated,_T("r"))) && (_=_tfopen(ChangeCTLR,_T("w")))))
 				THROWERR(_T("Open file Error!"));
 			while (!feof(fp)){
@@ -459,6 +483,7 @@ DWORD __stdcall HostThread(LPVOID){
 				if (!DeleteFile(ChangeCTLR));
 				Func_FastPMNTS(_T("Replace File Successfully\n"));
 			}
+//			Func_FastPMNTS(_T("heiheihei\n"));
 		}
 		catch(expection runtimeerr){
 			Func_FastPMNTS(_T("Fatal Error:\n"));

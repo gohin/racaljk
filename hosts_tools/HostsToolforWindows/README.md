@@ -1,6 +1,6 @@
 # Download Executable File
 
-Download address:[hosts_tool.exe](https://git.io/vVKmr)
+Download address:[hosts_tool.exe](https://git.io/vVykT)
 
 # Hosts Tool
 

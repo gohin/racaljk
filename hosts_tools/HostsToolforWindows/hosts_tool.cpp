@@ -30,6 +30,7 @@
 #include <stdlib.h>
 #include "ptrerr.hpp"
 #include "mitlicense.hpp"
+#include "diff.hpp"
 
 #define WIN32_LEAN_AND_MEAN
 
@@ -46,11 +47,10 @@ There seems something wrong in download file, we will retry after 5 seconds.\n")
 #define DownLocated _T("hosts.tmp")
 #define ChangeCTLR _T("hostsq.tmp")
 #define BAD_EXIT \
-		_tprintf(_T("Bad Parameters.\nUsing [program-name] -? to show how to use.\n")),\
+		_tprintf(_T("Bad Parameters.\nUsing \"-?\" Parameter to show how to use.\n")),\
 		abort();
 #define LogFileLocate _T("c:\\Hosts_Tool_log.log")
 const size_t localbufsize=1024;
-
 
 struct expection{
 	const TCHAR *Message;
@@ -58,7 +58,6 @@ struct expection{
 		this->Message=_1;
 	}
 };
-
 
 #define SHOW_HELP _T("\
 ------------------------------------------------------------\n\
@@ -74,7 +73,6 @@ Options:\n\
     -show : Show the MIT license(redefined)\n\
 Example:\n\
     hosts_tool -fi\n\n")
-
 
 #define welcomeShow _T("\
     **********************************************\n\
@@ -105,16 +103,15 @@ DWORD CALLBACK Main_Thread(LPVOID);
 void Func_Service_Install();
 void Func_Service_UnInstall();
 void NormalEntry();
-bool Func_CheckDiff(const TCHAR*,const TCHAR*) throw(expection);
 DWORD __stdcall HostThread(LPVOID);
 void ___debug_point_reset(int);
 inline void __show_str(TCHAR const *,TCHAR const *);
 
 SERVICE_TABLE_ENTRY STE[2]={{Sname,Service_Main},{NULL,NULL}};
-
+//define buffer
 TCHAR DEFBUF(buf1,localbufsize),DEFBUF(buf2,localbufsize),
 	DEFBUF(buf3,localbufsize),DEFBUF(szline,localbufsize);
-
+//define parameters
 enum _Parameters{
 	EXEC_START_NORMAL		=1<<0x00,
 //	EXEC_START_RUNAS		=1<<0x01,
@@ -136,7 +133,7 @@ enum _Parameters{
 	EXEC_BAD_PARAMETERS		=1073741824
 };
 
-
+//define _In_ parameters string
 TCHAR const *__const_Parameters[]={
 /*	_T("rinstall"),
 	_T("runinstall"),
@@ -179,8 +176,7 @@ int __fastcall __Check_Parameters(int argc,TCHAR const **argv){
 	BAD_EXIT
 }
 
-
-
+//main entry
 int _tmain(int argc,TCHAR const ** argv){
 	SetConsoleTitle(_T("racaljk-host tools"));
 	switch (__Check_Parameters(argc,argv)){
@@ -206,7 +202,6 @@ inline void __show_str(TCHAR const* st,TCHAR const * _ingore){
 	return ;
 }
 
-
 void NormalEntry(){
 	SYSTEMTIME st={0,0,0,0,0,0,0,0};
 	FILE * fp=NULL,*_=NULL;
@@ -216,7 +211,6 @@ void NormalEntry(){
 	_tprintf(_T("    Bug report:sweheartiii[at]hotmail.com \n\t       Or open new issue\n\n\n"));
 	_tprintf(_T("    Start replace hosts file:\n    Step1:Get System Driver..."));
 	try {
-		int errcunt;
 		if (!GetEnvironmentVariable(_T("SystemRoot"),buf3,BUFSIZ))
 			THROWERR(_T("GetEnvironmentVariable() Error!\n\tCannot get system path!"));
 		_stprintf(buf1,_T("%s\\system32\\drivers\\etc\\hosts"),buf3);
@@ -224,11 +218,10 @@ void NormalEntry(){
 		buf3,st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
 		_tprintf(_T("\t\tDone.\n    Step2:Download hosts file..."));
 		//download
-		for (int errcunt=0;!Func_Download(hostsfile,DownLocated)&& errcunt<2;
-			errcunt++,_tprintf(pWait),Sleep(5000),_tprintf(_T("\tDownload hosts file...")));
-		if (errcunt>1) 	for (errcunt=0,_tprintf(_T("\tDownload hosts file..."));
-							!Func_Download(hostsfile1,DownLocated);errcunt++,Sleep(5000))
-					if (errcunt>1) THROWERR(_T("DownLoad hosts file Error!"));
+		for (int errcunt=0;!Func_Download(hostsfile,DownLocated)||
+			!Func_Download(hostsfile1,DownLocated);errcunt++,_tprintf(pWait),
+			Sleep(5000),_tprintf(_T("\tDownload hosts file...")))
+					if (errcunt>2) THROWERR(_T("DownLoad hosts file Error!"));
 		//end.
 		_tprintf(_T("\t100%%\n    Step3:Change Line Endings..."));
 		if (!((fp=_tfopen(DownLocated,_T("r"))) && (_=_tfopen(ChangeCTLR,_T("w")))))
@@ -281,17 +274,19 @@ void Func_Service_UnInstall(){
 		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
 			THROWERR(_T("OpenSCManager() Error in Uninstall service."));
 		if (!(shSvc=OpenService(shMang,Sname,SERVICE_ALL_ACCESS)))
-			THROWERR(_T("OpenService() Error in Uninstall service."));
+			_tprintf(_T("OpenService() Error in Uninstall service.%s"),
+				_T("\nIs service exist?"));
 		if (!ControlService(shSvc,SERVICE_CONTROL_STOP,&ss))
-			THROWERR(_T("ControlService() Error in Uninstall service."));
+			_tprintf(_T("ControlService() Error in Uninstall service.%s"),
+				_T(""));
 		Sleep(2000);//Wait for service stop
-		if (!DeleteService(shSvc)){
+		if (!DeleteService(shSvc))
+			THROWERR(_T("DeleteService() Error in UnInstall service."));
+		if (!DeleteFile(buf1)){
 			_tprintf(_T("Executable File located:%s\n"),buf1);
-			THROWERR(_T("DeleteService() Error in UnInstall service.\n\
+			THROWERR(_T("DeleteFile() Error in Uninstall service.\n\
 You may should delete it manually."));
 		}
-		if (!DeleteFile(buf1))
-			THROWERR(_T("DeleteFile() Error in Uninstall service."));
 	}
 	catch (expection re){
 		_tprintf(_T("\nFatal Error:\n%s (GetLastError():%ld)\n\
@@ -302,9 +297,9 @@ Please contact the application's support team for more information.\n"),
 		CloseServiceHandle(shMang);
 		abort();
 	}
-	_tprintf(_T("Service Uninstall Successfully\n"));
 	CloseServiceHandle(shSvc);
 	CloseServiceHandle(shMang);
+	_tprintf(_T("Service Uninstall Successfully\n"));
 	return ;
 }
 
@@ -342,9 +337,9 @@ Please contact the application's support team for more information.\n"),
 		CloseServiceHandle(shMang);
 		abort();
 	}
-	_tprintf(_T("Exited debug mode.\n"));
 	CloseServiceHandle(shSvc);
 	CloseServiceHandle(shMang);
+	_tprintf(_T("Exited debug mode.\n"));
 	return ;
 }
 
@@ -387,7 +382,7 @@ void Func_Service_Install(){
 			else
 			THROWERR(_T("CreateService() failed."));
 		}
-		else //MessageBox(NULL,_T("Service installed successfully"),_T("Congratulations!"),MB_SETFOREGROUND|MB_ICONINFORMATION);
+		else //_T("Service installed successfully"),_T("Congratulations!"),MB_SETFOREGROUND|MB_ICONINFORMATION
 			_tprintf(_T("Install service successfully.\n"));
 		if (!(shSvc=OpenService(shMang,Sname,SERVICE_START)))
 			THROWERR(_T("OpenService() Failed"));
@@ -397,42 +392,17 @@ void Func_Service_Install(){
 	}
 	catch (expection runtimeError){
 		_tprintf(_T("\nFatal Error:\n%s (GetLastError():%ld)\n\
-Please contact the application's support team for more information.\n"),runtimeError.Message,GetLastError());
+Please contact the application's support team for more information.\n"),
+		runtimeError.Message,GetLastError());
 		_tprintf(_T("\n[Debug Message]\n%s\n%s\n%s\n"),buf1,buf2,buf3);
 		abort();
 	}
-	MessageBox(NULL,_T("Service started successfully"),_T("Congratulations!"),MB_SETFOREGROUND|MB_ICONINFORMATION);
-	system("pause");
+	MessageBox(NULL,_T("Service started successfully"),_T("Congratulations!"),
+		MB_SETFOREGROUND|MB_ICONINFORMATION);
 	CloseServiceHandle(shMang);
 	CloseServiceHandle(shSvc);
+	system("pause");
 	return ;
-}
-
-bool Func_CheckDiff(const TCHAR *lFilePath, const TCHAR * rFilePath) throw(expection) {
-	const size_t BUFFER_SIZE=2048;
-	FILE * lFile=_tfopen(lFilePath,_T("rb")),*rFile=_tfopen(rFilePath,_T("rb"));
-    if(!(lFile && rFile))
-        return false;
-    char *lBuffer = new char[BUFFER_SIZE];
-    char *rBuffer = new char[BUFFER_SIZE];
-    if (!lBuffer||!rBuffer) THROWERR(_T("Can't allocate memory to buffer in diff"));
-    do {
-    	fread(lBuffer,sizeof(char),BUFFER_SIZE,lFile);
-    	fread(rBuffer,sizeof(char),BUFFER_SIZE,rFile);
-        if (memcmp(lBuffer, rBuffer, BUFFER_SIZE)||
-			((!feof(lFile)&&feof(rFile))||(feof(lFile)&&!(feof(rFile))))){
-            delete[] lBuffer;
-            delete[] rBuffer;
-		    fclose(lFile);
-		    fclose(rFile);
-            return false;
-        }
-    } while ((!feof(lFile))&&(!feof(rFile)));
-    delete[] lBuffer;
-    delete[] rBuffer;
-    fclose(lFile);
-    fclose(rFile);
-    return true;
 }
 
 DWORD __stdcall HostThread(LPVOID){
@@ -440,7 +410,8 @@ DWORD __stdcall HostThread(LPVOID){
 	FILE * fp=NULL,*_=NULL;
 	Func_SetErrorFile(LogFileLocate,_T("a+"));
 	if (!GetEnvironmentVariable(_T("SystemRoot"),buf3,BUFSIZ))
-		THROWERR(_T("GetEnvironmentVariable() Error!\n\tCannot get system path!"));
+		_tprintf(_T("GetEnvironmentVariable() Error!(GetLastError():%ld)\n\
+\tCannot get system path!"),GetLastError()),abort();
 	_stprintf(buf1,_T("%s\\system32\\drivers\\etc\\hosts"),buf3);
 	Func_FastPMNTS(_T("Open log file.\n"));
 	Func_FastPMNTS(_T("LICENSE:MIT LICENSE\n"));
@@ -454,13 +425,10 @@ DWORD __stdcall HostThread(LPVOID){
 		buf3,st.wYear,st.wMonth,st.wDay,st.wHour,st.wMinute,st.wSecond);
 		Func_FastPMNTS(_T("Start replace hosts file.\n"));
 		try {
-			int errcunt;
-			for (errcunt=0;!Func_Download(hostsfile,DownLocated) && errcunt<2;errcunt++,Sleep(10000));
-//				Func_FastPMNTS("1\n");
-			if (errcunt>1) for (errcunt=0;!Func_Download(hostsfile1,DownLocated);errcunt++,Sleep(10000)){
-//				Func_FastPMNTS("2\n");
+			for (int errcunt=0;!Func_Download(hostsfile1,DownLocated)||
+				!Func_Download(hostsfile,DownLocated);errcunt++,Sleep(10000))
 				if (errcunt>1) THROWERR(_T("DownLoad hosts file Error!"));
-			}
+		
 			if (!((fp=_tfopen(DownLocated,_T("r"))) && (_=_tfopen(ChangeCTLR,_T("w")))))
 				THROWERR(_T("Open file Error!"));
 			while (!feof(fp)){
@@ -496,7 +464,7 @@ DWORD __stdcall HostThread(LPVOID){
 }
 
 void WINAPI Service_Main(DWORD,LPTSTR *){
-	if ((ssh=RegisterServiceCtrlHandler(Sname,Service_Control)));
+	if (!(ssh=RegisterServiceCtrlHandler(Sname,Service_Control)));
 	ss.dwServiceType=SERVICE_WIN32_OWN_PROCESS;
 	ss.dwCurrentState=SERVICE_START_PENDING;
 	ss.dwControlsAccepted=SERVICE_ACCEPT_STOP|SERVICE_ACCEPT_SHUTDOWN;
@@ -509,7 +477,7 @@ void WINAPI Service_Main(DWORD,LPTSTR *){
 	ss.dwCheckPoint=0;
 	ss.dwWaitHint=0;
 	SetServiceStatus(ssh,&ss);
-	if ((hdThread=CreateThread(NULL,0,HostThread,NULL,0,NULL)));
+	if (!(hdThread=CreateThread(NULL,0,HostThread,NULL,0,NULL)));
 	WaitForSingleObject(hdThread,INFINITE);
 	ss.dwCurrentState=SERVICE_STOPPED;
 	ss.dwCheckPoint=0;

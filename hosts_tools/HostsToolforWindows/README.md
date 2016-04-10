@@ -1,6 +1,6 @@
 # Download Executable File
 
-Download address:[hosts_tool.exe](https://git.io/vVykT)
+Download address:[hosts_tool.exe](https://git.io/vVSwE)
 
 # Hosts Tool
 
@@ -20,7 +20,7 @@ main program file: `hosts_tool.exe`
 
 如果安装服务 程序会往`%SystemRoot%`下复制一个`hosts_tool.exe`文件用来作为服务启动的主程序
 
-安装服务后 日志文件会保存在`c:\Hosts_Tool_log.log`下 您可以通过查看日志观察服务的工作状态
+安装服务后 日志文件会保存在`C:\Hosts_Tool_log.log`下 您可以通过查看日志观察服务的工作状态
 
 卸载服务请使用原来的`hosts_tool.exe`文件 请不要在命令行中直接执行`hosts_tool -fu`(如执行 需要手动删除`%SystemRoot%`目录下的`hoststools.exe`)
 

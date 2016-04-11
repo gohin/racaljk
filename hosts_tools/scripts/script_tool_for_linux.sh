@@ -10,7 +10,7 @@
 #           If you have hosts rules provided by others, you may get conflict.
 #
 if [ `id -u` -eq 0 ]; then
-    wget 'https://raw.githubusercontent.com/racaljk/hosts/master/hosts' -O /tmp/fetchedhosts --no-check-certificate
+    curl -fLo /tmp/fetchedhosts 'https://raw.githubusercontent.com/racaljk/hosts/master/hosts'
     sed -i '/# Copyright (c) 2014/,/# Modified hosts end/d' /etc/hosts
 
     sed -i "s/localhost/`hostname`/g" /tmp/fetchedhosts

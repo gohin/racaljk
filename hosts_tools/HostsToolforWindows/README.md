@@ -30,7 +30,7 @@ Bug Report: 请开新的issue并`@Too-Naive`或者发邮件给 sweheartiii[at]ho
 
 ## for Developer
 
-Code license:
+### Code license:
 
 >The MIT License(MIT)(redefined)
 
@@ -40,16 +40,20 @@ Code license:
 
 >THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Service debug mode:
+### Service Debug Mode Entrance:
 
-1. Open console.
-2. Input `hosts_tools.exe --debug-reiu --pipe` and press enter.
+1. Open the console.
+2. Input `hosts_tools.exe --debug-reiu --pipe` and press enter.(reinstall service with debug mode)
 3. If there haven't any error, Input `hosts_tools.exe --debug-pipe` and press enter.
 4. Now you can see the working status of service.
-5. Press Ctrl+C to Exit debug mode.(**DO NOT CLOSE THE CONSOLE DIRECT**)
-6. Input `hosts_tools.exe --debug-reiu` to reinstall service.
+5. Press **Ctrl+C** to Exit debug mode.
+6. Input `hosts_tools.exe --debug-reiu` and press enter to reinstall service.
+
+**WARNING: IN DEBUG MODE, DO NOT CLOSE THE CONSOLE DIRECT**
 
 	_Notice:In debug mode, service run cycle is very sort_
+
+### How to Compile?
 
 **Save `hosts_tool.exe.manifest` to directory first**
 
@@ -74,5 +78,3 @@ File `hosts_tool.exe.manifest`:
     </trustInfo>
 </assembly>
 ```
-
-

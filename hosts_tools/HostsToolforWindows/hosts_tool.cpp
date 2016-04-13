@@ -438,7 +438,7 @@ void Func_Service_Install(bool _q){
 		_stprintf(buf1,_T("%s\\hoststools.exe"),buf3);
 		_stprintf(buf2,_T("\"%s\\hoststools.exe\" -svc"),buf3);
 		if (request_client) 
-			_stprintf(szline,"%s %s",buf2,szParameters[11]),
+			_stprintf(szline,_T("%s %s"),buf2,szParameters[11]),
 			_tcscpy(buf2,szline),memset(szline,0,sizeof(szline)/sizeof(TCHAR));
 		if (!GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)))
 			THROWERR(_T("GetModuleFileName() Error in Install Service."));
@@ -597,7 +597,6 @@ void WINAPI Service_Main(DWORD,LPTSTR *){
 	ss.dwCheckPoint=0;
 	ss.dwWaitHint=0;
 	SetServiceStatus(ssh,&ss);
-	if (request_client) Sleep(1000);
 	if (!(lphdThread[0]=CreateThread(NULL,0,HostThread,NULL,0,NULL)));
 	WaitForSingleObject(lphdThread[0],INFINITE);
 	ss.dwCurrentState=SERVICE_STOPPED;
@@ -617,6 +616,7 @@ void WINAPI Service_Control(DWORD dwControl){
 			ss.dwWaitHint=1000;
 			SetServiceStatus(ssh,&ss);
 			TerminateThread(lphdThread[0],0);
+			if (request_client) CloseHandle(hdPipe);
 			ss.dwCurrentState=SERVICE_STOPPED;
 			ss.dwCheckPoint=0;
 			ss.dwWaitHint=0;

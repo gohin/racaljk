@@ -40,7 +40,7 @@
 #define hostsfile _T("https://raw.githubusercontent.com/racaljk/hosts/master/hosts")
 #define hostsfile1 _T("https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts")
 #define objectwebsite _T("https://github.com/racaljk/hosts")
-#define ConsoleTitle _T("racaljk-host tools     build time:Apr. 12th, '16")
+#define ConsoleTitle _T("racaljk-host tools     Build time:Apr. 13th, '16")
 
 #define CASE(x,y) case x : y; break;
 #define pWait _T("\n    \
@@ -82,15 +82,18 @@ typedef struct
 Hosts Tool for Windows Console by: Too-Naive\n\
 Copyright (C) 2016 @Too-Naive License:MIT LICENSE(redefined)\n\
 ------------------------------------------------------------\n\n\
-Usage: hosts_tool [-fi | -fu | -h | -? | -show]\n\n\
+Usage: hosts_tool [-fi | -fu | -h | -? | -show | --debug-pipe]\n\n\
 Options:\n\
     -h    : Show this help message.\n\
     -?    : Show this help message.\n\
     -fi   : Install Auto-Update hosts service(Service Name:%s).\n\
     -fu   : Uninstall service.\n\
     -show : Show the MIT license(redefined)\n\
+	--debug-pipe : Debug Mode(reserved)\n\
 Example:\n\
-    hosts_tool -fi\n\n")
+    hosts_tool -fi\n\n\
+    If you need more imformation about debug mode,\n\
+    Please see the page in: https:\x2f\x2fgit.io/vVp2k\n\n")
 
 #define welcomeShow _T("\
     **********************************************\n\
@@ -129,7 +132,6 @@ DWORD __stdcall HostThread(LPVOID);
 void ___debug_point_reset(int);
 inline void __show_str(TCHAR const *,TCHAR const *);
 HANDLE ___pipeopen();
-DWORD WINAPI PipeSent(LPVOID);
 inline DWORD ___pipeclose();
 DWORD __stdcall OpenPipeService(LPVOID);
 DWORD ___pipesentmessage(const TCHAR *);
@@ -217,7 +219,7 @@ int _tmain(int argc,TCHAR const ** argv){
 	switch (__Check_Parameters(argc,argv)){
 		CASE(EXEC_START_NORMAL,NormalEntry());
 		CASE(EXEC_START_INSTALL_SERVICE,Func_Service_Install(true));
-		CASE(EXEC_START_UNINSTALL_SERVICE,Func_Service_UnInstall(false));
+		CASE(EXEC_START_UNINSTALL_SERVICE,Func_Service_UnInstall(true));
 		CASE(EXEC_START_SERVICE,StartServiceCtrlDispatcher(STE));
 		CASE(EXEC_START_HELP,__show_str(SHOW_HELP,Sname));
 		CASE(EXEC_DEBUG_RESET,___debug_point_reset(EXEC_DEBUG_RESET));
@@ -234,9 +236,13 @@ int _tmain(int argc,TCHAR const ** argv){
 void __abrt(int _sig){
 //	TerminateThread(lphdThread[0],0);
 	if (_sig==SIGINT) _tprintf(_T("Received signal SIGINT\n"));
-	___debug_point_reset(DEBUG_SERVICE_STOP);
+//	___debug_point_reset(DEBUG_SERVICE_STOP);
+	request_client=0;
+	_tprintf(_T("Uninstall service.\n"));
+	Func_Service_UnInstall(false);
+	TerminateThread(lphdThread[0],0);
 	CloseHandle(hdPipe);
-	system("pause");
+	_tprintf(_T("Program is ready to exit.\n"));
 	exit(0);
 }
 
@@ -327,24 +333,21 @@ void Func_Service_UnInstall(bool _quite){
 	try{
 		if (!GetEnvironmentVariable(_T("SystemRoot"),buf2,BUFSIZ))
 			THROWERR(_T("GetEnvironmentVariable() Error in UnInstall Service."));
-		_stprintf(buf1,_T("%s\\hoststools.exe"),buf2);/*
-		if (!GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)));
-			THROWERR(_T("GetModuleFileName() Error in Uninstall Service."));
-		if (!_tcscmp(buf1,szline)) THROWERR(_T("Please"))*/
+		_stprintf(buf1,_T("%s\\hoststools.exe"),buf2);
 		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
 			THROWERR(_T("OpenSCManager() Error in Uninstall service."));
 		if (!(shSvc=OpenService(shMang,Sname,SERVICE_ALL_ACCESS)))
-			if (_quite) _tprintf(_T("OpenService() Error in Uninstall service.%s"),
-				_T("\nIs service exist?")),abort();
+			if (_quite) THROWERR(_T("OpenService() Error in Uninstall service.\nIs service exist?"));
 		if (!ControlService(shSvc,SERVICE_CONTROL_STOP,&ss))
-			_tprintf(_T("ControlService() Error in Uninstall service.\n%s"),
+			if (_quite) _tprintf(_T("ControlService() Error in Uninstall service.\n%s"),
 				_T("Service may not in running.\n"));
 		Sleep(2000);//Wait for service stop
 		if (!DeleteService(shSvc))
-			THROWERR(_T("DeleteService() Error in UnInstall service."));
-		if (!DeleteFile(buf1)){
-			_tprintf(_T("Executable File located:%s\n"),buf1);
-			THROWERR(_T("DeleteFile() Error in Uninstall service.\n\
+			if (_quite) THROWERR(_T("DeleteService() Error in UnInstall service."));
+		if (!DeleteFile(buf1))
+			if (_quite) {
+				_tprintf(_T("Executable File located:%s\n"),buf1);
+				THROWERR(_T("DeleteFile() Error in Uninstall service.\n\
 You may should delete it manually."));
 		}
 	}
@@ -372,10 +375,12 @@ void ___debug_point_reset(int _par){
 		return ;
 	}
 	try {
-		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
-			THROWERR(_T("OpenSCManager() Error in debug_reset."));
-		if (!(shSvc=OpenService(shMang,Sname,SERVICE_STOP|SERVICE_START)))
-			THROWERR(_T("OpenService() Error in debug_reset."));
+		if (_par!=OPEN_LISTEN) {
+			if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
+				THROWERR(_T("OpenSCManager() Error in debug_reset."));
+			if (!(shSvc=OpenService(shMang,Sname,SERVICE_STOP|SERVICE_START)))
+				THROWERR(_T("OpenService() Error in debug_reset."));
+		}
 		switch(_par){
 			case DEBUG_SERVICE_STOP:
 			case EXEC_DEBUG_RESET:
@@ -386,16 +391,22 @@ void ___debug_point_reset(int _par){
 			case OPEN_LISTEN:
 				if (_par!=EXEC_DEBUG_RESET){
 					signal(SIGINT,__abrt);
+_tprintf(_T("    Warning:\n    \
+You are in debug mode, please press CTRL+C to exit the debug mode.\n\t\t\
+DO NOT CLOSE THE CONSOLE DIRECT!!!\n"));
+					request_client=1;
+					_tprintf(_T("Reinstall service\n"));
+					___debug_point_reset(DEBUG_SERVICE_REINSTALL);
+					___debug_point_reset(DEBUG_SERVICE_START);
 					if ((lphdThread[0]=CreateThread(NULL,0,OpenPipeService,NULL,0,NULL))==INVALID_HANDLE_VALUE)
 						THROWERR(_T("CreateThread() Error!"));
+					WaitForSingleObject(lphdThread[0],INFINITE);
+					CloseHandle(hdPipe);
+					return ;
 				}
 			case DEBUG_SERVICE_START:
 				if (!StartService(shSvc,1,SzName))
 					THROWERR(_T("StartService() Error in debug_reset."));
-				if (_par==OPEN_LISTEN){
-					WaitForSingleObject(lphdThread[0],INFINITE);
-					CloseHandle(hdPipe);
-				}
 			default : break;
 		}
 	}
@@ -431,13 +442,13 @@ void Func_Service_Install(bool _q){
 			_tcscpy(buf2,szline),memset(szline,0,sizeof(szline)/sizeof(TCHAR));
 		if (!GetModuleFileName(NULL,szline,sizeof(szline)/sizeof(TCHAR)))
 			THROWERR(_T("GetModuleFileName() Error in Install Service."));
-		_tprintf(_T("    Step1:Copy file.\n"));
+		if (_q) _tprintf(_T("    Step1:Copy file.\n"));
 		if (!CopyFile(szline,buf1,FALSE))
 			THROWERR(_T("CopyFile() Error in Install Service.(Is service has been installed?)"));
-		_tprintf(_T("    Step2:Connect to SCM.\n"));
+		if (_q) _tprintf(_T("    Step2:Connect to SCM.\n"));
 		if (!(shMang=OpenSCManager(NULL,NULL,SC_MANAGER_ALL_ACCESS)))
 			THROWERR(_T("OpenSCManager() failed."));
-		_tprintf(_T("    Step3:Write service.\n"));
+		if (_q) _tprintf(_T("    Step3:Write service.\n"));
 		if (!(shSvc=CreateService(shMang,Sname,_T("racaljk-hosts Tool"),
 		SERVICE_ALL_ACCESS,SERVICE_WIN32_OWN_PROCESS,SERVICE_AUTO_START,SERVICE_ERROR_NORMAL,
 			buf2,NULL,NULL,NULL,NULL,NULL))){
@@ -515,7 +526,7 @@ DWORD __stdcall HostThread(LPVOID){
 \tCannot get system path!"),GetLastError()),abort();
 	_stprintf(buf1,_T("%s\\system32\\drivers\\etc\\hosts"),buf3);
 	Func_PMNTTS(_T("[Debug Message]:%d\n"),request_client);
-	if (request_client) ___pipeopen(),___pipesentmessage(_T("\nMessage from service:\n"));
+	if (request_client) ___pipeopen(),___pipesentmessage(_T("\nMessage from service:\n\n"));
 	Func_PMNTTS(_T("Open log file.\n"));
 	___checkEx(_T("LICENSE:MIT LICENSE\n"),1);
 	___checkEx(_T("Copyright (C) 2016 Too-Naive\n"),0);
@@ -572,13 +583,6 @@ Please contact the application's support team for more information.\n"),runtimee
 	return GetLastError();
 }
 
-DWORD WINAPI PipeSent(LPVOID){
-//	while (1){
-		
-//	}
-	return GetLastError();
-}
-
 void WINAPI Service_Main(DWORD,LPTSTR *){
 	if (!(ssh=RegisterServiceCtrlHandler(Sname,Service_Control)));
 	ss.dwServiceType=SERVICE_WIN32_OWN_PROCESS;
@@ -595,8 +599,6 @@ void WINAPI Service_Main(DWORD,LPTSTR *){
 	SetServiceStatus(ssh,&ss);
 	if (request_client) Sleep(1000);
 	if (!(lphdThread[0]=CreateThread(NULL,0,HostThread,NULL,0,NULL)));
-//	if (request_client) if (!(lphdThread[1]=CreateThread(NULL,0,NULL,NULL,0,NULL)));
-//	WaitForMultipleObjects(request_client?2:1,lphdThread,TRUE,INFINITE);
 	WaitForSingleObject(lphdThread[0],INFINITE);
 	ss.dwCurrentState=SERVICE_STOPPED;
 	ss.dwCheckPoint=0;
@@ -615,7 +617,6 @@ void WINAPI Service_Control(DWORD dwControl){
 			ss.dwWaitHint=1000;
 			SetServiceStatus(ssh,&ss);
 			TerminateThread(lphdThread[0],0);
-			if (request_client) TerminateThread(lphdThread[1],0);
 			ss.dwCurrentState=SERVICE_STOPPED;
 			ss.dwCheckPoint=0;
 			ss.dwWaitHint=0;
@@ -635,7 +636,6 @@ DWORD __stdcall OpenPipeService(LPVOID){
 		return _tprintf(_T("CreateEvent failed with %ld.\n"), GetLastError());
 	oConnect.hEvent = hConnectEvent;
 	fPendingIO = CreateAndConnectInstance(&oConnect);
-	_tprintf(_T("Ready to start service\n"));
 	while (1){
 		dwWait = WaitForSingleObjectEx(hConnectEvent,INFINITE,TRUE);
 		switch (dwWait){ 
@@ -721,9 +721,9 @@ BOOL ConnectToNewClient(HANDLE hPipe, LPOVERLAPPED lpo)
 
 inline void GetAnswerToRequest(LPPIPEINST pipe)
 {
-//	_tprintf( TEXT("[%p] %s"), pipe->hPipeInst, pipe->chRequest);
 	_tprintf( TEXT("%s"), pipe->chRequest);
 	//reserved:
-/*	lstrcpyn( pipe->chReply,  TEXT("") ,BUFSIZE);
+/*	_tprintf( TEXT("[%p] %s"), pipe->hPipeInst, pipe->chRequest);
+	lstrcpyn( pipe->chReply,  TEXT("") ,BUFSIZE);
 	pipe->cbToWrite = (lstrlen(pipe->chReply)+1)*sizeof(TCHAR);*/
 }

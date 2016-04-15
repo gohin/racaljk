@@ -1,7 +1,6 @@
 # Download Executable File
 
-Download address:[hosts_tool.exe](https://git.io/vVSwE)
-
+Download address:[hosts_tool.exe](https://git.io/vVSwE) [Mirror address](https://yunpan.cn/cq4amgJfUZwTM)(code:b9b1)
 
 #### Minimum Supported Operator System:
 - Client : Microsoft Windows XP Family

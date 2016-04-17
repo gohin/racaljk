@@ -1,6 +1,6 @@
 # Copyright (c) 2014-2016, racaljk.
 # https://github.com/racaljk/hosts
-# Last updated: 2016-4-16
+# Last updated: 2016-4-17
 
 # This work is licensed under a CC BY-NC-SA 4.0 International License.
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -122,7 +122,7 @@ fe80::1%lo0	localhost
 173.252.81.7	check4.facebook.com
 173.252.81.7	check6.facebook.com
 173.252.81.7	code.facebook.com
-173.252.81.7	connect.facebook.com
+31.13.95.14	connect.facebook.com
 173.252.81.7	edge-chat.facebook.com
 173.252.81.7	pixel.facebook.com
 173.252.81.7	star.c10r.facebook.com
@@ -578,10 +578,11 @@ fe80::1%lo0	localhost
 # 74.125.248.72	src.chromium.org
 # 74.125.248.73	git.chromium.org
 # 220.255.2.153	codereview.chromium.org
-220.255.2.153	download-chromium.appspot.com
 220.255.2.153	betaspike.appspot.com
-220.255.2.153	m-dot-betaspike.appspot.com
 220.255.2.153	chrome-devtools-frontend.appspot.com
+220.255.2.153	download-chromium.appspot.com
+220.255.2.153	jmoore-dot-android-experiments.appspot.com
+220.255.2.153	m-dot-betaspike.appspot.com
 220.255.2.153	accounts.google.com.gi
 220.255.2.153	accounts.google.co.nz
 220.255.2.153	id.google.co.nz
@@ -2836,6 +2837,8 @@ fe80::1%lo0	localhost
 220.255.2.153	certificate-transparency.org
 220.255.2.153	www.certificate-transparency.org
 220.255.2.153	abc.xyz
+64.233.191.121	www.androidexperiments.com
+64.233.191.121	androidexperiments.com
 # Google:others End
 
 # Gmail SMTP/POP/IMAP Start

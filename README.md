@@ -6,11 +6,11 @@
 
 **使用镜像地址获取** [**hosts**](https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts)
 
-**加入聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+**进入聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 ## 更新 hosts
-* 下述指令均可能覆盖现有 hosts ，请先确认是否需要备份。
-    推荐使用本项目的 [**Host Tools**](https://github.com/racaljk/hosts/tree/master/tools) 来自动化 备份/配置 的工作。
+* 下述指令均可能覆盖现有 hosts ，请先确认是否需要备份。推荐使用本项目的 [**Host Tools**](https://github.com/racaljk/hosts/tree/master/tools) 来自动化 备份/配置 的工作。
 
 * 若更新 hosts 未立即生效，请重置网络：
   - 在系统设置内开关网络
@@ -26,21 +26,6 @@
 
 > 注意：如果遇到无法保存，请右键文件hosts并找到“属性” -> “安全”，然后选择你登陆的用户名，最后点击编辑，勾选“写入”即可。
 
-### Mac OS
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/private/etc/hosts`中并保存。
-
-
-> 可使用 [Gas Mask](http://clockwise.ee/) 工具。
-
-
-### Android
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
-
-
-### iOS
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
-
-
 ### Linux
 将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到`/etc/hosts`中并保存。
 
@@ -48,9 +33,21 @@
 
     wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts -qO /tmp/hosts && sudo sh -c 'cat /tmp/hosts > /etc/hosts'
 
+### Mac OS
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
+
+> 可使用 [Gas Mask](http://clockwise.ee/) 工具。
+
+### Android
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
+
+### iOS
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
+
+
 ## 更多
-**获取更多信息，请访问 [Wiki 页面](https://github.com/racaljk/hosts/wiki) 。**
-**如有问题，请开 [Issue](https://github.com/racaljk/hosts/wiki) 反馈。**
+**获取更多信息，请访问 [Wiki 页面](https://github.com/racaljk/hosts/wiki) 。如有问题，请开 [Issue](https://github.com/racaljk/hosts/wiki) 反馈。**
+
 
 ## License
 - 本项目的所有代码除另有说明外,均按照 [MIT License](https://github.com/racaljk/hosts/blob/master/LICENSE) 发布。

@@ -2,7 +2,7 @@
 
 **使用本项目之前，请先阅读此 README 及下方的许可协议**
 
- **目前通过修改 hosts 无法观看 YouTube 视频 详情: [Issue #297](https://github.com/racaljk/hosts/issues/297)**
+**目前通过修改 hosts 无法观看 YouTube 视频 详情: [Issue #297](https://github.com/racaljk/hosts/issues/297)**
 
 **使用镜像地址获取** [**hosts**](https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts)
 

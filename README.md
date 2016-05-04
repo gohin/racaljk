@@ -22,27 +22,27 @@
 
     C:\Windows\System32\drivers\etc\hosts
 
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到上述文件内并保存
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到上述文件内并保存
 
 > 注意：如果遇到无法保存，请右键文件hosts并找到“属性” -> “安全”，然后选择你登陆的用户名，最后点击编辑，勾选“写入”即可。
 
 ### Linux
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到`/etc/hosts`中并保存。
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到`/etc/hosts`中并保存。
 
 或开启终端（快捷键为<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>）输入命令：
 
     wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts -qO /tmp/hosts && sudo sh -c 'cat /tmp/hosts > /etc/hosts'
 
 ### Mac OS
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到 `/etc/hosts`中并保存。
 
 > 可使用 [Gas Mask](http://clockwise.ee/) 工具。
 
 ### Android
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到 `/etc/hosts`中并保存。
 
 ### iOS
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全文复制到 `/etc/hosts`中并保存。
+将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到 `/etc/hosts`中并保存。
 
 
 ## 更多
@@ -54,8 +54,5 @@
 - 本项目的hosts，README.MD，wiki等资源基于[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 这意味着你可以拷贝、并再发行本项目的内容，但是你将必须同样**提供原作者信息以及协议声明**。同时你也**不能将本项目用于商业用途**，按照我们狭义的理解（增加附属条款），凡是**任何盈利的活动皆属于商业用途**。
 - 请在遵守当地相关法律法规的前提下使用本项目。
-- 如果您使用了本项目，则您在使用本项目的产品(包括但不限于其衍生产品)过程中产生的法律问题和安全问题，**与本项目无关**。同样，本项目也不承担任何连带法律责任。
-- 项目中有规定其他协议的，也适用于本用户协议的最后一条协议。
-- **使用/下载本项目中的产品(包括但不限于其衍生产品)则意味着您已经阅读了本协议并愿意遵守本协议规定的有关事项；若你无法遵守上述的责任和义务，请不要拷贝、并再发行本项目；如果您违反本协议使用/下载项目中的产品(包括但不限于其衍生产品)，我们将最大限度地追究您的违约责任。**
 
 ![img-source-from-https://github.com/docker/dockercraft](https://github.com/docker/dockercraft/raw/master/docs/img/contribute.png?raw=true)

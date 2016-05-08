@@ -1,4 +1,4 @@
-![doodles](https://www.google.com/logos/doodles/2016/st-georges-day-2016-6574194768740352-hp2x.jpg)
+![doodles](https://www.google.com/logos/doodles/2016/teachers-day-2016-us-6296626244091904.2-hp2x.gif)
 
 **使用本项目之前，请先阅读此 README 及下方的许可协议**
 

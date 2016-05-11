@@ -8,6 +8,7 @@
 
 **进入聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[English version](https://github.com/racaljk/hosts/wiki/README(en))
 
 ## 更新 hosts
 * 下面介绍的操作均可能覆盖现有 hosts ，进行操作前请先确认是否需要备份。

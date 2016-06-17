@@ -8,7 +8,7 @@
 
 **使用镜像地址获取** [**hosts**](https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts)
 
-**聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  **hosts 格式测试:** [![hosts status](https://travis-ci.org/racaljk/hosts.svg?branch=master)](https://travis-ci.org/racaljk/hosts)
+**聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  **hosts 格式测试:** [![hosts status](https://api.travis-ci.org/racaljk/hosts.svg?branch=master)](https://travis-ci.org/racaljk/hosts)
 
 ## 更新 hosts
 * 下面介绍的操作均可能覆盖现有 hosts ，进行操作前请先确认是否需要备份。

@@ -5,7 +5,7 @@ dist: trusty
 env:
 global:
     # Be permissive, unset following enviroment
-    - STRICT_HOSTS_FORMAT
+    - STRICT_HOSTS_FORMAT=1
 
 before_install:
     - sudo apt-get update -qq

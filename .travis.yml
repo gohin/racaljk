@@ -2,11 +2,6 @@ language: c
 sudo: requried
 dist: trusty
 
-env:
-global:
-    # Be permissive, unset following enviroment
-    - STRICT_HOSTS_FORMAT=1
-
 before_install:
     - sudo apt-get update -qq
     - sudo apt-get install -qq -y gettext
@@ -18,4 +13,6 @@ install:
     - cd ..
 
 script:
+    # Be permissive, unset following enviroment
+    - export STRICT_HOSTS_FORMAT=1
     - bash tools/checkhosts.sh

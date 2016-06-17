@@ -1,6 +1,6 @@
 # Copyright (c) 2014-2016, racaljk.
 # https://github.com/racaljk/hosts
-# Last updated: 2016-06-14
+# Last updated: 2016-06-17
 
 # This work is licensed under a CC BY-NC-SA 4.0 International License.
 # https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -881,8 +881,8 @@ fe80::1%lo0	localhost
 220.255.2.153	www.registry.google
 220.255.2.153	www.domains.google
 220.255.2.153	registry.google
-220.255.2.153 servicemanagement.clients6.google.com
-220.255.2.153 cloudconsole-pa.clients6.google.com
+220.255.2.153	servicemanagement.clients6.google.com
+220.255.2.153	cloudconsole-pa.clients6.google.com
 
 # gstatic Start
 220.255.2.153	geo0.ggpht.com
@@ -1182,7 +1182,7 @@ fe80::1%lo0	localhost
 220.255.2.153	connectivitycheck.android.com
 220.255.2.153	developer.android.com
 220.255.2.153	dev.android.com
-64.233.188.121  b.android.com
+64.233.188.121	b.android.com
 64.233.188.121	tools.android.com
 220.255.2.153	source.android.com
 220.255.2.153	market.android.com
@@ -3542,7 +3542,7 @@ fe80::1%lo0	localhost
 
 # Vimeo Start
 104.156.85.217	vimeo.com
-104.156.85.217  www.vimeo.com
+104.156.85.217	www.vimeo.com
 104.156.85.217	player.vimeo.com
 103.245.224.143	i.vimeocdn.com
 103.245.224.143	f.vimeocdn.com
@@ -3611,7 +3611,7 @@ fe80::1%lo0	localhost
 # XDA End
 
 # Yahoo Start
-192.0.79.32 code.flickr.com
+192.0.79.32	code.flickr.com
 121.101.144.112	api.flickr.com
 119.161.9.151	c5.ah.yahoo.com
 119.160.254.215	d.yimg.com
@@ -3677,7 +3677,7 @@ fe80::1%lo0	localhost
 # Yahoo End
 
 # Travis CI fastly CDN Start
-103.245.222.249  travis-ci-org.global.ssl.fastly.net
+103.245.222.249	travis-ci-org.global.ssl.fastly.net
 # Travis CI fastly CDN End
 
 # Github start
@@ -3685,7 +3685,7 @@ fe80::1%lo0	localhost
 # Github end
 
 #TensorFlow start
-64.233.188.121 www.tensorflow.org
+64.233.188.121	www.tensorflow.org
 #TensorFlow end
 
 # W3schools Start

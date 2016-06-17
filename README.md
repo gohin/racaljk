@@ -8,7 +8,7 @@
 
 **使用镜像地址获取** [**hosts**](https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts)
 
-**进入聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+**聊天室:** [![Join the chat at https://gitter.im/racaljk/hosts](https://badges.gitter.im/racaljk/hosts.svg)](https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  **hosts 格式测试:** [![hosts status](https://api.travis-ci.org/andytimes/hosts_check.svg?branch=master)](https://travis-ci.org/andytimes/hosts_check)
 
 ## 更新 hosts
 * 下面介绍的操作均可能覆盖现有 hosts ，进行操作前请先确认是否需要备份。
@@ -28,20 +28,14 @@
 
 > 注意：如果遇到无法保存，请右键文件hosts并找到“属性” -> “安全”，然后选择你登陆的用户名，最后点击编辑，勾选“写入”即可。
 
-### Linux
+### Linux 和 Mac OS
 将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到`/etc/hosts`中并保存。
 
 或开启终端（快捷键为<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd>）输入命令：
 
     wget https://raw.githubusercontent.com/racaljk/hosts/master/hosts -qO /tmp/hosts && sudo sh -c 'cat /tmp/hosts > /etc/hosts'
 
-### Mac OS
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到 `/etc/hosts`中并保存。
-
-### Android
-将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到 `/etc/hosts`中并保存。
-
-### iOS
+### Android 和 iOS
 将 [hosts](https://raw.githubusercontent.com/racaljk/hosts/master/hosts) 全部内容复制到 `/etc/hosts`中并保存。
 
 

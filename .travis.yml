@@ -7,8 +7,8 @@ before_install:
     - sudo apt-get install -qq -y gettext
 
 install:
-    - wget https://sourceforge.net/projects/dos2unix/files/dos2unix/7.3.4/dos2unix-7.3.4.tar.gz/download -O dos2unix.tar.gz
-    - tar xf dos2unix.tar.gz
+    - wget -q https://github.com/racaljk/hosts/releases/download/checkhosts/dos2unix-7.3.4.tar.gz
+    - tar xf dos2unix-7.3.4.tar.gz
     - cd dos2unix-7.3.4 && make && sudo make prefix=/usr install
     - cd ..
 

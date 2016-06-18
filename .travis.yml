@@ -15,4 +15,4 @@ install:
 script:
     # Be permissive, unset following enviroment
     - export STRICT_HOSTS_FORMAT=1
-    - bash tools/checkhosts.sh
+    - bash tools/checkhosts.sh hosts

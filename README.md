@@ -1,4 +1,4 @@
-![doodles](https://www.google.com/logos/doodles/2016/teachers-day-2016-us-6296626244091904.2-hp2x.gif)
+![doodles](https://www.google.com/logos/doodles/2016/summer-solstice-strawberry-moon-5156509353771008-hp2x.gif)
 
 [English version](https://github.com/racaljk/hosts/wiki/README(en))
 

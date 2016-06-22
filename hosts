@@ -509,6 +509,7 @@ fe80::1%lo0	localhost
 220.255.2.153	uploads.stage.gdata.youtube.com
 220.255.2.153	answers.google.com
 220.255.2.153	wenda.google.com.hk
+220.255.2.153	android.googleblog.com
 220.255.2.153	security.googleblog.com
 220.255.2.153	gmail.googleblog.com
 220.255.2.153	chrome.googleblog.com
@@ -551,6 +552,7 @@ fe80::1%lo0	localhost
 220.255.2.153	4.bp.blogspot.com
 220.255.2.153	5.bp.blogspot.com
 220.255.2.153	6.bp.blogspot.com
+220.255.2.153	officialandroid.blogspot.com
 220.255.2.153	android-developers.blogspot.com
 220.255.2.153	android-developers.blogspot.hk
 220.255.2.153	books.google.com

@@ -1,4 +1,7 @@
-![doodles](https://www.google.com.hk/logos/doodles/2016/juno-reaches-jupiter-5164229872058368-hp.gif)
+[![doodle]][doodle-story]
+
+[doodle]: https://www.google.com.hk/logos/doodles/2016/juno-reaches-jupiter-5164229872058368-hp.gif "Juno Reaches Jupiter"
+[doodle-story]: https://www.google.com.hk/#newwindow=1&safe=strict&q=%E6%9C%B1%E8%AF%BA%E5%8F%B7&oi=ddle&hl=zh-CN
 
 [English version](https://github.com/racaljk/hosts/wiki/README(en))
 

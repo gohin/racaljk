@@ -11,12 +11,12 @@
 
 **使用镜像地址获取 [hosts][coding-hosts]**
 
-|       [聊天室][chat-rom]       |    [hosts 格式检测][travis-status]    |
+|       [聊天室][chat-room]       |    [hosts 格式检测][travis-status]    |
 | :----------------------------: | :-----------------------------------: |
-|  [![chat-metadata]][chat-rom]  |  [![travis-metadata]][travis-status]  |
+|  [![chat-metadata]][chat-room]  |  [![travis-metadata]][travis-status]  |
 
 [chat-metadata]: https://badges.gitter.im/racaljk/hosts.svg "Join the chat at https://gitter.im/racaljk/hosts"
-[chat-rom]: https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge "Gitter chat rom"
+[chat-room]: https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge "Gitter chat room"
 [travis-metadata]: https://img.shields.io/travis/racaljk/hosts/master.svg "Travis CI Metadata"
 [travis-status]: https://travis-ci.org/racaljk/hosts "Travis CI Status"
 

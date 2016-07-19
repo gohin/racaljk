@@ -321,6 +321,7 @@ fe80::1%lo0	localhost
 104.244.42.136	cdn.syndication.twitter.com
 104.244.42.2	cdn.api.twitter.com
 104.244.42.1	preview.cdn.twitter.com
+104.244.42.3  apps.twitter.com
 # Twitter End
 
 # Gmail web Start

@@ -1,24 +1,21 @@
 [![doodle]][doodle-story]
 
-[doodle]: https://www.google.com.hk/logos/doodles/2016/juno-reaches-jupiter-5164229872058368-hp.gif "Juno Reaches Jupiter"
-[doodle-story]: https://www.google.com.hk/search?q=%E6%9C%B1%E8%AF%BA%E5%8F%B7
-
-[English version](https://github.com/racaljk/hosts/wiki/README(en))
+[doodle]: http://images.chinaiiss.com/attachment/special/201304/03/175656_156.jpg "undefined"
+[doodle-story]: http://baike.baidu.com/link?url=Hoj02JsYhwUYVDaSaHSDazhfYjoqBmlzE_-K279sL3jQ3b7JQPVQi1wWX_s7tn5Vi0MuLX9oazEqpUbAGiIijiXHN1EmSXv-BMoh99MPD3a
 
 **使用本项目之前，请先阅读此 README 及下方的许可协议**
 
-**如果在使用过程中遇到问题 如无法连接xxx等 请参阅: [常见问题解答](https://github.com/racaljk/hosts/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94)**
 
-**使用镜像地址获取 [hosts][coding-hosts]**
-
-|       [聊天室][chat-room]       |    [hosts 格式检测][travis-status]    |
-| :----------------------------: | :-----------------------------------: |
-|  [![chat-metadata]][chat-room]  |  [![travis-metadata]][travis-status]  |
+|       [聊天室][chat-room]       |    [hosts 格式检测][travis-status]    |  [镜像hosts][mirror_of_hosts]  |
+| :----------------------------: | :-----------------------------------: |  :---------------------------: |
+|  [![chat-metadata]][chat-room] |  [![travis-metadata]][travis-status]  |   [![coding.net]][coding.net]  |
 
 [chat-metadata]: https://badges.gitter.im/racaljk/hosts.svg "Join the chat at https://gitter.im/racaljk/hosts"
 [chat-room]: https://gitter.im/racaljk/hosts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge "Gitter chat room"
-[travis-metadata]: https://img.shields.io/travis/racaljk/hosts/master.svg "Travis CI Metadata"
+[travis-metadata]: https://travis-ci.org/racaljk/hosts.svg "Travis CI Metadata"
 [travis-status]: https://travis-ci.org/racaljk/hosts "Travis CI Status"
+[coding.net]: http://www.easyicon.net/api/resizeApi.php?id=1168430&size=48
+[mirror_of_hosts]: https://coding.net/u/scaffrey/p/hosts/git/raw/master/hosts
 
 ## 更新 hosts
 * 下面介绍的操作均可能覆盖现有 hosts ，进行操作前请先确认是否需要备份。
@@ -50,7 +47,8 @@
 
 
 ## 更多
-**获取更多信息，请访问 [Wiki 页面](https://github.com/racaljk/hosts/wiki) 。如有问题，请开 [Issue](https://github.com/racaljk/hosts/issues) 反馈。**
+- **获取更多信息，请访问 [Wiki 页面](https://github.com/racaljk/hosts/wiki) 。如有问题，请开 [Issue](https://github.com/racaljk/hosts/issues) 反馈。**
+- 如果在使用过程中遇到问题 如无法连接xxx等 请参阅: [常见问题解答](https://github.com/racaljk/hosts/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94)
 
 ## License
 - 本项目的所有代码除另有说明外,均按照 [MIT License](LICENSE) 发布。
